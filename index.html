@@ -1,393 +1,312 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo F Sousa | Consultor de Tecnologia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #16181D; 
-            --bg-gradient: radial-gradient(circle at top right, #1e2129, #16181d);
-            --surface: #1F2229;
-            --accent: #2976A6; 
-            --text: #F2F2F2; 
-            --text-muted: #94A3B8;
-            --border: rgba(255, 255, 255, 0.08);
-            --success: #31912E;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gustavo F Sousa — Software Engineer & IT Consultant</title>
+  <meta name="description" content="Gustavo F Sousa — Engenheiro de software, consultor de TI e fundador da Sousa Tech & Systems. Focado em backend escalável, IA aplicada e automação inteligente.">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gustavo F Sousa — Software Engineer & IT Consultant">
+  <meta property="og:description" content="Engenheiro de software focado em backend escalável, IA aplicada e automação inteligente.">
+  <meta property="og:type" content="website">
 
-        body {
-            background-color: var(--bg);
-            background: var(--bg-gradient);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
-        }
+  <!-- Fonts: Cabinet Grotesk (display) + Satoshi (body) from Fontshare -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            padding: 8rem 0 6rem 0;
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-text p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 520px;
-            font-weight: 300;
-        }
-
-        .hero-photo {
-            width: 100%;
-            aspect-ratio: 1/1;
-            background: var(--surface);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            filter: grayscale(100%);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        
-        .hero-photo:hover { 
-            filter: grayscale(0%);
-            transform: scale(1.02);
-            border-color: var(--accent);
-        }
-        
-        .hero-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-
-        section {
-            padding: 8rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 3.5rem;
-            line-height: 1.2;
-        }
-
-        .label {
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            letter-spacing: 0.25em;
-            color: var(--accent);
-            margin-bottom: 1.2rem;
-            display: block;
-            font-weight: 700;
-        }
-
-        .manifesto-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-        }
-
-        .manifesto-text {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        .manifesto-text span {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .work-item {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            margin-bottom: 8rem;
-        }
-
-        .work-meta h3 { font-size: 1.8rem; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
-        .work-meta p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.2rem; }
-
-        .work-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-
-        .work-tags {
-            display: flex;
-            gap: 0.8rem;
-            list-style: none;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .work-tags li {
-            font-size: 0.7rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            border-radius: 4px;
-        }
-
-        .media-box {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            width: 100%;
-            margin: 2.5rem 0;
-            border-radius: 6px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .media-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: brightness(0.9);
-            transition: filter 0.3s;
-        }
-
-        .media-box:hover .media-image {
-            filter: brightness(1.1);
-        }
-
-        .media-caption {
-            padding: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .roadmap-card {
-            padding: 2.5rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: border-color 0.3s;
-        }
-
-        .roadmap-card:hover { border-color: rgba(41, 118, 166, 0.4); }
-
-        .roadmap-card h4 { margin-bottom: 1rem; font-size: 1.2rem; }
-        
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            color: var(--success);
-        }
-
-        .dot { width: 6px; height: 6px; background: currentColor; border-radius: 50%; }
-
-        .philosophy {
-            text-align: center;
-            padding: 12rem 0;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .philosophy blockquote {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-style: italic;
-            margin-bottom: 2.5rem;
-            line-height: 1.3;
-        }
-
-        footer {
-            padding: 6rem 0;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .social-links a {
-            color: var(--text);
-            text-decoration: none;
-            margin-left: 2.5rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover { color: var(--accent); }
-
-        @media (max-width: 850px) {
-            header, .manifesto-grid, .work-item { grid-template-columns: 1fr; gap: 3rem; }
-            header { padding-top: 5rem; text-align: center; }
-            .hero-text p { margin: 0 auto; }
-            .hero-photo { max-width: 400px; margin: 0 auto; }
-            h2 { font-size: 2.2rem; }
-        }
-    </style>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/admin.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- HEADER -->
-        <header>
-            <div class="hero-text">
-                <span class="label">Consultor de Tecnologia</span>
-                <h1>Gustavo F Sousa</h1>
-                <p>AI-Native Product Engineer focado em arquiteturas de backend escaláveis e soluções inteligentes de negócio.</p>
-            </div>
-            <div class="hero-photo">
-                <img src="perfil.png" alt="Gustavo Sousa">
-            </div>
-        </header>
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="nav" role="navigation" aria-label="Navegação principal">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo" aria-label="Gustavo F Sousa — Página inicial">
+        <!-- SVG Logo: Geometric "G" mark -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M17 10h-2a6 6 0 0 0-6 6v0a6 6 0 0 0 6 6h1a2 2 0 0 0 2-2v-3h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span>Gustavo F Sousa</span>
+      </a>
 
-        <!-- ESTRATÉGIA / SOBRE -->
-        <section id="strategy">
-            <span class="label">A Abordagem</span>
-            <div class="manifesto-grid">
-                <h2>A ponte entre o código e o impacto.</h2>
-                <div class="manifesto-text">
-                    <p>Minha abordagem como consultor remove a névoa entre a diretoria e o time técnico. Sou um desenvolvedor que <span>pensa como dono do produto</span>.</p>
-                    <br>
-                    <p>Ao unir o rigor da <span>42 Rio</span> com a visão sistêmica da <span>Engenharia de Produção na UFF</span>, entrego sistemas que otimizam processos através de automação inteligente e IA aplicada.</p>
-                </div>
-            </div>
-        </section>
+      <ul class="nav__links" role="list">
+        <li><a href="#home" class="nav__link nav__link--active" data-nav="home">Início</a></li>
+        <li><a href="#projects" class="nav__link" data-nav="projects">Projetos</a></li>
+        <li><a href="#blog" class="nav__link" data-nav="blog">Blog</a></li>
+        <li><a href="#about" class="nav__link" data-nav="about">Sobre</a></li>
+      </ul>
 
-        <!-- TRABALHO / EXPERIÊNCIA -->
-        <section id="work">
-            <span class="label">Experiência Selecionada</span>
-            
-            <div class="work-item">
-                <div class="work-meta">
-                    <h3>Visão Full-stack</h3>
-                    <p>Engenharia de Software</p>
-                    <p>Sistemas & Interfaces</p>
-                </div>
-                <div class="work-content">
-                    <p>Embora focado em backend e arquitetura, mantenho o domínio do ciclo completo de desenvolvimento. Minha experiência permite transitar entre infraestrutura robusta e interfaces inteligentes.</p>
-                    
-                    <div class="media-box">
-                        <img src="terminal.png" class="media-image" alt="Terminal Code Gustavo">
-                        <div class="media-caption">
-                            Ambiente de desenvolvimento: Foco em produtividade, código limpo e arquitetura de componentes.
-                        </div>
-                    </div>
-
-                    <p>Atualmente na <strong>Icatu Seguros</strong>, aplico essa base para implementar o <strong>Model Context Protocol (MCP)</strong>, garantindo que a tecnologia de ponta em IA seja integrada com segurança em ambientes corporativos.</p>
-                    
-                    <ul class="work-tags">
-                        <li>.NET 8</li>
-                        <li>C#</li>
-                        <li>React / JS</li>
-                        <li>Microservices</li>
-                        <li>SQL Server</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 42 Rio -->
-            <div class="work-item">
-                <div class="work-meta">
-                    <h3>42 Rio</h3>
-                    <p>Software Engineering</p>
-                    <p>Formação de Elite</p>
-                </div>
-                <div class="work-content">
-                    <p>Uma imersão de 1900 horas em engenharia de software pura. Desenvolvimento de sistemas de baixo nível, algoritmos e gestão de infraestrutura em um ambiente de aprendizado por pares (peer-learning).</p>
-                    <ul class="work-tags">
-                        <li>C</li>
-                        <li>C++</li>
-                        <li>Algorithms</li>
-                        <li>Unix</li>
-                        <li>Docker</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROADMAP IA -->
-        <section id="ai">
-            <span class="label">Pesquisa & Desenvolvimento</span>
-            <h2>O Futuro é AI-Native.</h2>
-            <div class="roadmap-grid">
-                <div class="roadmap-card">
-                    <div class="status-indicator"><span class="dot"></span>Estudando</div>
-                    <h4>Sistemas RAG</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted);">Arquiteturas de busca semântica para conectar o conhecimento da empresa aos modelos de IA.</p>
-                </div>
-                <div class="roadmap-card">
-                    <div class="status-indicator"><span class="dot"></span>Estudando</div>
-                    <h4>Agentes Autônomos</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted);">Criação de agentes que executam tarefas complexas de ponta a ponta usando LangChain.</p>
-                </div>
-                <div class="roadmap-card">
-                    <div class="status-indicator" style="color:var(--accent)"><span class="dot"></span>Em Curso</div>
-                    <h4>Eng. de Produção</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted);">UFF (2028). Foco em otimização de fluxos, logística e tomada de decisão estratégica.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PHILOSOPHY -->
-        <section class="philosophy">
-            <blockquote>
-                "Boas soluções tecnológicas nascem de mentes que pensam além da tela."
-            </blockquote>
-            <p style="color: var(--text-muted);">
-                Leitor de Machado de Assis e entusiasta de trilhas. Acredito na tecnologia como meio, não como fim.
-            </p>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <p>© 2026 Gustavo F Sousa</p>
-            <div class="social-links">
-                <a href="mailto:seu-email@dominio.com">E-mail</a>
-                <a href="https://github.com/gustavofsousa" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/gustavofsousa/" target="_blank">LinkedIn</a>
-            </div>
-        </footer>
+      <div class="nav__controls">
+        <button class="nav__lang" data-lang-toggle onclick="toggleLanguage()" aria-label="Mudar idioma">EN</button>
+        <button class="nav__theme-toggle" data-theme-toggle aria-label="Alternar tema"></button>
+        <button class="nav__hamburger" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile-menu" role="dialog" aria-label="Menu de navegação">
+    <button class="nav__mobile-close" aria-label="Fechar menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <a href="#home" class="nav__link" data-nav="home">Início</a>
+    <a href="#projects" class="nav__link" data-nav="projects">Projetos</a>
+    <a href="#blog" class="nav__link" data-nav="blog">Blog</a>
+    <a href="#about" class="nav__link" data-nav="about">Sobre</a>
+  </div>
+
+  <!-- ============================================
+       PAGE: HOME
+       ============================================ -->
+  <main id="page-home" class="page">
+    <!-- Hero -->
+    <section class="hero" aria-label="Introdução">
+      <div class="container">
+        <div id="hero-content" class="hero__content">
+          <h1 class="hero__heading">
+            Transformando ideias em<br>
+            <span class="hero__highlight">soluções reais</span>
+          </h1>
+          <p class="hero__description">
+            Me chamo Gustavo F Sousa. Sou engenheiro de software, consultor de TI e fundador da Sousa Tech & Systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="section" aria-label="Projetos em destaque">
+      <div class="container">
+        <span class="section__label reveal">Portfolio</span>
+        <h2 class="section__title reveal" data-i18n="projects.title">Projetos</h2>
+        <p class="section__subtitle reveal" data-i18n="projects.subtitle">Uma seleção de trabalhos que refletem minha abordagem técnica.</p>
+
+        <div id="home-projects-grid" class="home-projects">
+          <!-- Rendered by JS -->
+        </div>
+
+        <a href="#projects" class="view-all reveal">
+          Ver todos os projetos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="section" aria-label="Últimas publicações">
+      <div class="container">
+        <span class="section__label reveal">Blog</span>
+        <h2 class="section__title reveal" data-i18n="blog.title">Últimas publicações</h2>
+
+        <div id="home-blog-grid" class="home-blog">
+          <!-- Rendered by JS -->
+        </div>
+
+        <a href="#blog" class="view-all reveal">
+          Ver todas as publicações
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       PAGE: PROJECTS
+       ============================================ -->
+  <main id="page-projects" class="page projects-page">
+    <div class="container">
+      <span class="section__label">Portfolio</span>
+      <h1 id="projects-page-title" class="section__title">Projetos</h1>
+      <p id="projects-page-subtitle" class="section__subtitle">Uma seleção de trabalhos que refletem minha abordagem técnica.</p>
+
+      <div id="projects-grid" class="projects-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================
+       PAGE: BLOG
+       ============================================ -->
+  <main id="page-blog" class="page blog-page">
+    <div class="container">
+      <span class="section__label">Blog</span>
+      <h1 id="blog-page-title" class="section__title">Blog</h1>
+      <p id="blog-page-subtitle" class="section__subtitle">Reflexões sobre tecnologia, carreira e desenvolvimento.</p>
+
+      <div id="blog-featured" class="blog-featured reveal">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div id="blog-grid" class="blog-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================
+       PAGE: ABOUT
+       ============================================ -->
+  <main id="page-about" class="page about-page">
+    <div class="container">
+      <!-- Story + Photo -->
+      <section class="about-hero">
+        <div class="about-photo">
+          <img src="./assets/perfil.png" alt="Gustavo F Sousa" loading="lazy">
+        </div>
+        <div>
+          <span class="section__label">About</span>
+          <h1 id="about-story-title" class="about-story__title">Builder com Visão de Impacto</h1>
+          <div id="about-story" class="about-story" style="margin-top: var(--space-6);">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Value Proposition -->
+      <section class="about-value-section section">
+        <h2 id="about-vp-title" class="about-block__title">Proposta de Valor</h2>
+        <div id="about-value-prop" class="about-value-prop">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Principles -->
+      <section class="about-principles-section section">
+        <h2 id="about-principles-title" class="about-block__title">O que me move</h2>
+        <div id="about-principles" class="principles-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Skills + Education -->
+      <div class="about-sections">
+        <div class="about-block">
+          <h2 id="about-skills-title" class="about-block__title">Stack & Diferencial</h2>
+          <div id="about-skills">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+        <div class="about-block">
+          <h2 id="about-edu-title" class="about-block__title">Formação</h2>
+          <ul id="about-education" class="education-list" role="list">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <svg viewBox="0 0 32 32" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M17 10h-2a6 6 0 0 0-6 6v0a6 6 0 0 0 6 6h1a2 2 0 0 0 2-2v-3h-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span id="footer-copy">© 2026 Gustavo F Sousa</span>
+        </div>
+        <ul class="footer__links" role="list">
+          <li>
+            <a href="mailto:gustavofsousa.me@gmail.com" class="footer__link" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/>
+              </svg>
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/gustavofsousa" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/gustavofsousa/" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       ADMIN: Login Overlay
+       ============================================ -->
+  <div id="admin-login-overlay" class="admin-login-overlay" role="dialog" aria-label="Login de administrador">
+    <div class="admin-login-box">
+      <h3>🔒 Admin</h3>
+      <input type="password" id="admin-password" placeholder="Senha" autocomplete="off">
+      <p id="admin-login-error" class="admin-login-error"></p>
+      <div class="admin-login-actions">
+        <button id="admin-login-cancel" class="btn">Cancelar</button>
+        <button id="admin-login-btn" class="btn btn--accent">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       ADMIN: Edit Modal
+       ============================================ -->
+  <div id="edit-modal-overlay" class="edit-modal-overlay" role="dialog" aria-label="Editar conteúdo">
+    <div id="edit-modal" class="edit-modal">
+      <h3>Editar</h3>
+      <div id="edit-fields"></div>
+      <div class="edit-modal__actions">
+        <button id="edit-modal-delete" class="edit-modal__delete">Excluir</button>
+        <button id="edit-modal-cancel" class="btn">Cancelar</button>
+        <button id="edit-modal-save" class="btn btn--accent">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       ADMIN: Bottom Bar
+       ============================================ -->
+  <div class="admin-bar" role="toolbar" aria-label="Barra de administração">
+    <div class="admin-bar__inner">
+      <span class="admin-bar__label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Modo Admin
+      </span>
+      <div class="admin-bar__actions">
+        <button id="admin-add-project" class="btn">+ Projeto</button>
+        <button id="admin-add-post" class="btn">+ Post</button>
+        <button id="admin-export" class="btn">Exportar JSON</button>
+        <button id="admin-logout" class="btn btn--accent">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="./js/theme.js"></script>
+  <script src="./js/admin.js"></script>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/router.js"></script>
 
 </body>
 </html>

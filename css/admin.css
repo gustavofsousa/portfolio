@@ -1,0 +1,249 @@
+/* ============================================
+   ADMIN PANEL — Hidden CMS
+   Portfolio Gustavo F Sousa
+   ============================================ */
+
+/* --- Login Overlay --- */
+.admin-login-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login-overlay.active {
+  display: flex;
+}
+
+.admin-login-box {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-login-box h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.admin-login-box input[type="password"] {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.admin-login-box input[type="password"]:focus {
+  border-color: var(--color-accent);
+}
+
+.admin-login-box .admin-login-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.admin-login-box .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.admin-login-error {
+  color: #e74c3c;
+  font-size: var(--text-xs);
+  text-align: center;
+  display: none;
+}
+
+/* --- Admin Bar --- */
+.admin-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-6);
+  backdrop-filter: blur(16px);
+}
+
+.admin-bar.active {
+  display: block;
+}
+
+.admin-bar__inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-bar__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.admin-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.admin-bar .btn {
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-4);
+}
+
+/* --- Editable Items --- */
+.admin-mode .editable {
+  position: relative;
+  cursor: pointer;
+  outline: 1px dashed transparent;
+  outline-offset: 4px;
+  transition: outline-color var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.admin-mode .editable:hover {
+  outline-color: var(--color-accent);
+}
+
+.admin-mode .editable::after {
+  content: '✏️';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.admin-mode .editable:hover::after {
+  opacity: 1;
+}
+
+/* --- Edit Modal --- */
+.edit-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.edit-modal-overlay.active {
+  display: flex;
+}
+
+.edit-modal {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-shadow: var(--shadow-lg);
+}
+
+.edit-modal h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.edit-modal label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.edit-modal input[type="text"],
+.edit-modal input[type="url"],
+.edit-modal input[type="date"],
+.edit-modal textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.edit-modal textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.edit-modal input:focus,
+.edit-modal textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.edit-modal__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
+
+.edit-modal__delete {
+  margin-right: auto;
+  color: #e74c3c;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.edit-modal__delete:hover {
+  background: rgba(231, 76, 60, 0.1);
+}

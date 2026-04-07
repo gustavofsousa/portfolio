@@ -1,0 +1,278 @@
+{
+  "pt": {
+    "nav": {
+      "home": "Início",
+      "projects": "Projetos",
+      "blog": "Blog",
+      "about": "Sobre"
+    },
+    "hero": {
+      "tagline": "Transformando ideias em",
+      "highlight": "produtos que funcionam",
+      "description": "Me chamo Gustavo F Sousa. Sou AI-Native Product Engineer — pego problemas reais e construo soluções completas, do back-end ao deploy, com IA aplicada como alavanca."
+    },
+    "projects": {
+      "title": "Projetos",
+      "subtitle": "Produtos lançados e soluções construídas do zero ao fim.",
+      "viewProject": "Ver projeto",
+      "items": [
+        {
+          "id": "mcp-icatu",
+          "title": "MCP — Icatu Seguros",
+          "description": "Implementação do Model Context Protocol em ambiente corporativo, integrando IA generativa com segurança em sistemas de seguros de grande porte. Integração padronizada de IA com sistemas legados em arquitetura enterprise.",
+          "tags": [".NET 8", "C#", "Microservices", "SQL Server", "MCP", "Azure"],
+          "link": "#",
+          "featured": true
+        },
+        {
+          "id": "accident-ml",
+          "title": "Predição de Acidentes — PRF",
+          "description": "Modelo de machine learning com TensorFlow usando dados da PRF (2021-2025) para prever risco de acidentes por localização, horário e condições climáticas. Do modelo ao produto público funcional.",
+          "tags": ["Python", "TensorFlow", "Data Science", "ML"],
+          "link": "https://github.com/gustavofsousa",
+          "featured": true
+        },
+        {
+          "id": "healthcare-saas",
+          "title": "SaaS — Gestão Geriátrica",
+          "description": "MVP de plataforma modular para gestão de clínicas e asilos, com módulos de inventário, faturamento e prontuário eletrônico. Produto end-to-end pensado para resolver o problema real de profissionais de saúde.",
+          "tags": ["SaaS", "Healthcare", "Full-stack", "MVP"],
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "sousa-tech",
+          "title": "Sousa Tech & Systems",
+          "description": "Consultoria de TI para pequenas empresas — suporte remoto, configuração de sistemas, web design e instrução de informática com contratos estruturados e SLA definido.",
+          "tags": ["IT Support", "Consulting", "Web Design"],
+          "link": "#",
+          "featured": false
+        }
+      ]
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Reflexões sobre tecnologia, carreira e desenvolvimento.",
+      "readMore": "Ler mais",
+      "posts": [
+        {
+          "id": "post-1",
+          "title": "Minha experiência na 42 Rio: aprendizado por pares",
+          "excerpt": "O que aprendi em 1900 horas de imersão em engenharia de software pura, sem professores e com 100% de peer-learning. Como essa metodologia moldou minha forma de resolver problemas e trabalhar em equipe.",
+          "category": "Carreira",
+          "date": "2026-03-15",
+          "readTime": "7 min"
+        }
+      ]
+    },
+    "about": {
+      "title": "Sobre mim",
+      "story": {
+        "title": "Builder com Visão de Impacto",
+        "paragraphs": [
+          "Não sou apenas programador, nem apenas engenheiro, nem apenas analista de processos. Sou quem pega um problema real e constrói a <strong>solução completa que funciona</strong>. Meu diferencial está na intersecção rara: entendo código, processo, arquitetura e impacto humano.",
+          "Tudo começou com curiosidade por entender como as coisas funcionam — de smartphones a servidores. Essa curiosidade me levou à <strong>42 Rio</strong>, onde mergulhei em 1900 horas de engenharia de software pura: C, C++, algoritmos e sistemas Unix, tudo em um ambiente de peer-learning sem professores.",
+          "Em paralelo, curso <strong>Engenharia de Produção na UFF</strong> (previsão 2028). Enquanto o desenvolvedor comum foca no <em>como</em> construir, a Engenharia de Produção me ensina o <em>porquê</em> construir e como otimizar processos para gerar resultado. Olho para um problema e pergunto: qual é o gargalo? Estamos otimizando a parte certa? Como meço o sucesso de forma estatisticamente válida?",
+          "Hoje atuo na <strong>Icatu Seguros</strong> implementando o Model Context Protocol (MCP), integrando IA generativa com segurança em ambientes corporativos. Fundei a <strong>Sousa Tech & Systems</strong> para atender pequenas empresas com suporte de TI, web design e consultoria.",
+          "Meu foco: <strong>IA Aplicada</strong> (RAG, Agentes Autônomos, LLMs, MCP), <strong>backend escalável</strong> (.NET, microserviços, Azure) e a construção de <strong>produtos end-to-end</strong> que resolvem problemas reais de negócio. O mercado está cheio de devs que só codificam e de cientistas que só fazem modelos — está vazio de quem faz a ponte. <strong>Esse é meu espaço.</strong>"
+        ]
+      },
+      "valueProposition": {
+        "title": "Proposta de Valor",
+        "text": "Engenheiro de Software Full-Stack especializado em soluções com IA aplicada. Construo produtos end-to-end que resolvem problemas reais de negócio, com foco em automação inteligente, processamento de dados e experiências potencializadas por agentes autônomos."
+      },
+      "principles": {
+        "title": "O que me move",
+        "items": [
+          {
+            "icon": "impact",
+            "name": "Impacto Tangível",
+            "description": "Preciso ver meu trabalho melhorando a vida de alguém. Produtos que não importam não me movem."
+          },
+          {
+            "icon": "autonomy",
+            "name": "Autonomia Técnica Completa",
+            "description": "Capacidade de construir do zero ao fim, sem depender de ninguém para executar minha visão."
+          },
+          {
+            "icon": "purpose",
+            "name": "Pragmatismo com Propósito",
+            "description": "Quero ganhar resolvendo coisas que importam. Se não atende isso, não é para mim."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Stack & Diferencial",
+        "categories": [
+          {
+            "label": "Base Sólida",
+            "items": [".NET / C#", "SQL Server", "Oracle", "Microserviços", "Azure", "Event-Driven", "C", "C++", "JavaScript", "React", "Node.js", "Docker", "Git", "Linux"]
+          },
+          {
+            "label": "Diferencial em Construção",
+            "items": ["RAG Systems", "Agentes Autônomos", "LLMs / Embeddings", "MCP", "Python", "LangChain", "TensorFlow", "Multi-Agent Systems", "Fine-tuning"]
+          }
+        ]
+      },
+      "education": {
+        "title": "Formação",
+        "items": [
+          { "name": "42 Rio", "detail": "Software Engineering — 1900h de imersão", "period": "Concluído" },
+          { "name": "UFF", "detail": "Engenharia de Produção", "period": "2028" }
+        ]
+      }
+    },
+    "footer": {
+      "copyright": "© 2026 Gustavo F Sousa",
+      "builtWith": "Feito com propósito."
+    },
+    "admin": {
+      "loginPrompt": "Senha de administrador",
+      "login": "Entrar",
+      "logout": "Sair",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "addProject": "Adicionar Projeto",
+      "addPost": "Adicionar Post",
+      "editHint": "Clique em qualquer item para editar"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "blog": "Blog",
+      "about": "About"
+    },
+    "hero": {
+      "tagline": "Turning ideas into",
+      "highlight": "products that work",
+      "description": "I'm Gustavo F Sousa. AI-Native Product Engineer — I take real problems and build complete solutions, from back-end to deploy, with applied AI as leverage."
+    },
+    "projects": {
+      "title": "Projects",
+      "subtitle": "Shipped products and solutions built from zero to finish.",
+      "viewProject": "View project",
+      "items": [
+        {
+          "id": "mcp-icatu",
+          "title": "MCP — Icatu Seguros",
+          "description": "Implementation of the Model Context Protocol in a corporate environment, securely integrating generative AI into large-scale insurance systems. Standardized AI integration with legacy systems in enterprise architecture.",
+          "tags": [".NET 8", "C#", "Microservices", "SQL Server", "MCP", "Azure"],
+          "link": "#",
+          "featured": true
+        },
+        {
+          "id": "accident-ml",
+          "title": "Accident Prediction — PRF",
+          "description": "Machine learning model with TensorFlow using PRF data (2021-2025) to predict accident risk by location, time, and weather conditions. From model to public working product.",
+          "tags": ["Python", "TensorFlow", "Data Science", "ML"],
+          "link": "https://github.com/gustavofsousa",
+          "featured": true
+        },
+        {
+          "id": "healthcare-saas",
+          "title": "SaaS — Geriatric Care",
+          "description": "Modular MVP platform for clinic and nursing home management, with inventory, billing, and electronic health records modules. End-to-end product designed to solve real problems for healthcare professionals.",
+          "tags": ["SaaS", "Healthcare", "Full-stack", "MVP"],
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "sousa-tech",
+          "title": "Sousa Tech & Systems",
+          "description": "IT consulting for small businesses — remote support, system configuration, web design and informatics instruction with structured contracts and defined SLA.",
+          "tags": ["IT Support", "Consulting", "Web Design"],
+          "link": "#",
+          "featured": false
+        }
+      ]
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Thoughts on technology, career, and development.",
+      "readMore": "Read more",
+      "posts": [
+        {
+          "id": "post-1",
+          "title": "My experience at 42 Rio: peer-to-peer learning",
+          "excerpt": "What I learned in 1900 hours of pure software engineering immersion, with no teachers and 100% peer-learning. How this methodology shaped the way I solve problems and work in teams.",
+          "category": "Career",
+          "date": "2026-03-15",
+          "readTime": "7 min"
+        }
+      ]
+    },
+    "about": {
+      "title": "About me",
+      "story": {
+        "title": "Builder with Impact Vision",
+        "paragraphs": [
+          "I'm not just a programmer, nor just an engineer, nor just a process analyst. I'm the one who takes a real problem and builds the <strong>complete solution that works</strong>. My edge lies at a rare intersection: I understand code, process, architecture, and human impact.",
+          "It all started with curiosity about how things work — from smartphones to servers. That curiosity led me to <strong>42 Rio</strong>, where I immersed myself in 1900 hours of pure software engineering: C, C++, algorithms, and Unix systems, all in a peer-learning environment with no teachers.",
+          "In parallel, I'm studying <strong>Production Engineering at UFF</strong> (expected 2028). While the average developer focuses on <em>how</em> to build, Production Engineering teaches me <em>why</em> to build and how to optimize processes for results. I look at a problem and ask: what's the bottleneck? Are we optimizing the right part? How do I measure success in a statistically valid way?",
+          "Today I work at <strong>Icatu Seguros</strong> implementing the Model Context Protocol (MCP), securely integrating generative AI into corporate environments. I founded <strong>Sousa Tech & Systems</strong> to serve small businesses with IT support, web design, and consulting.",
+          "My focus: <strong>Applied AI</strong> (RAG, Autonomous Agents, LLMs, MCP), <strong>scalable backend</strong> (.NET, microservices, Azure), and building <strong>end-to-end products</strong> that solve real business problems. The market is full of devs who only code and data scientists who only build models — it's empty of those who bridge the gap. <strong>That's my space.</strong>"
+        ]
+      },
+      "valueProposition": {
+        "title": "Value Proposition",
+        "text": "Full-Stack Software Engineer specialized in applied AI solutions. I build end-to-end products that solve real business problems, focusing on intelligent automation, data processing, and experiences powered by autonomous agents."
+      },
+      "principles": {
+        "title": "What drives me",
+        "items": [
+          {
+            "icon": "impact",
+            "name": "Tangible Impact",
+            "description": "I need to see my work improving someone's life. Products that don't matter don't move me."
+          },
+          {
+            "icon": "autonomy",
+            "name": "Complete Technical Autonomy",
+            "description": "The ability to build from zero to finish, without depending on anyone to execute my vision."
+          },
+          {
+            "icon": "purpose",
+            "name": "Pragmatism with Purpose",
+            "description": "I want to earn by solving things that matter. If it doesn't meet this, it's not for me."
+          }
+        ]
+      },
+      "skills": {
+        "title": "Stack & Edge",
+        "categories": [
+          {
+            "label": "Solid Foundation",
+            "items": [".NET / C#", "SQL Server", "Oracle", "Microservices", "Azure", "Event-Driven", "C", "C++", "JavaScript", "React", "Node.js", "Docker", "Git", "Linux"]
+          },
+          {
+            "label": "Edge in Progress",
+            "items": ["RAG Systems", "Autonomous Agents", "LLMs / Embeddings", "MCP", "Python", "LangChain", "TensorFlow", "Multi-Agent Systems", "Fine-tuning"]
+          }
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "items": [
+          { "name": "42 Rio", "detail": "Software Engineering — 1900h immersion", "period": "Completed" },
+          { "name": "UFF", "detail": "Production Engineering", "period": "2028" }
+        ]
+      }
+    },
+    "footer": {
+      "copyright": "© 2026 Gustavo F Sousa",
+      "builtWith": "Built with purpose."
+    },
+    "admin": {
+      "loginPrompt": "Admin password",
+      "login": "Login",
+      "logout": "Logout",
+      "save": "Save",
+      "cancel": "Cancel",
+      "addProject": "Add Project",
+      "addPost": "Add Post",
+      "editHint": "Click any item to edit"
+    }
+  }
+}
