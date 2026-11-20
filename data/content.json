@@ -15,6 +15,9 @@
       "title": "Projetos",
       "subtitle": "Produtos lançados e soluções construídas do zero ao fim.",
       "viewProject": "Ver projeto",
+      "legend": "Status:",
+      "status": {"usable": "Funcionando", "building": "Em construção", "spec": "Só especificação"},
+      "visibility": {"open": "Código aberto", "private": "Repositório privado"},
       "items": [
         {
           "id": "mcp-icatu",
@@ -25,12 +28,128 @@
           "featured": true
         },
         {
+          "id": "calibre-mcp",
+          "title": "calibre-mcp",
+          "description": "Servidor MCP para uma LLM gerenciar uma biblioteca Calibre. Ele escreve, não só lê: diff e token de confirmação antes de cada passo arriscado, backup antes de cada escrita e remoção recuperável.",
+          "tags": ["Python", "MCP", "SQLite"],
+          "status": "usable",
+          "visibility": "open",
+          "metric": "20+ ferramentas · licença MIT",
+          "link": "https://github.com/gustavofsousa/calibre-mcp",
+          "featured": true
+        },
+        {
+          "id": "s-operacoes",
+          "title": "S-Operações",
+          "description": "Operação de TI de vários clientes em linguagem natural. O operador pede, e a IA lê e muda a frota do cliente por ferramentas MCP guardadas.",
+          "tags": ["TypeScript", "MCP", "Action1"],
+          "status": "building",
+          "visibility": "private",
+          "link": "#",
+          "featured": true
+        },
+        {
+          "id": "periciamap",
+          "title": "PeríciaMap",
+          "description": "Plataforma onde advogados encontram peritos e peritos organizam seu trabalho. Reescrita completa, com ida ao ar prevista para a v1.0.",
+          "tags": ["Bun", "Astro", "Hono", "Drizzle", "Postgres"],
+          "status": "building",
+          "visibility": "private",
+          "metric": "v0.1–v0.4 prontas · staging no ar",
+          "link": "#",
+          "featured": true
+        },
+        {
+          "id": "hq",
+          "title": "_hq",
+          "description": "Meu sistema de trabalho com IA: skills, agentes, hooks e um padrão de escrita. Faz todo repositório seguir o mesmo processo.",
+          "tags": ["Markdown", "Shell", "Python"],
+          "status": "usable",
+          "visibility": "private",
+          "metric": "50+ skills",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "oratio-vitae",
+          "title": "Oratio Vitae",
+          "description": "Devocionário pessoal que a própria pessoa monta. Ela cria rotinas de oração e o app mostra o que rezar hoje. Local-first: sem conta e sem servidor.",
+          "tags": ["Astro", "PWA", "IndexedDB"],
+          "status": "building",
+          "visibility": "private",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "ponto-caminho",
+          "title": "Ponto do Caminho",
+          "description": "App de leitura espiritual católica em que a leitura vira percurso: texto, silêncio, reflexão, anotação e vida prática. O repositório público tem a documentação do produto.",
+          "tags": ["Flutter", "Dart"],
+          "status": "building",
+          "visibility": "open",
+          "link": "https://github.com/gustavofsousa/ponto-caminho",
+          "featured": false
+        },
+        {
+          "id": "terrametrica",
+          "title": "Terramétrica",
+          "description": "Um clique no mapa, o dossiê do lote: área e restrições ambientais e de risco já cruzadas, com fonte e data em cada número. Estado do Rio de Janeiro.",
+          "tags": ["Python", "FastAPI", "PostGIS", "MapLibre"],
+          "status": "building",
+          "visibility": "open",
+          "metric": "92 municípios na malha",
+          "link": "https://github.com/gustavofsousa/Terrametrica",
+          "featured": false
+        },
+        {
+          "id": "ecclesia-atlas",
+          "title": "Ecclesia Atlas",
+          "description": "Base de dados aberta da estrutura da Igreja Católica no Brasil, com território municipal e fonte registrada em cada campo.",
+          "tags": ["Python", "JSON", "GeoJSON"],
+          "status": "usable",
+          "visibility": "open",
+          "metric": "v0.3.0 · 266 circunscrições",
+          "link": "https://github.com/gustavofsousa/ecclesia-atlas",
+          "featured": false
+        },
+        {
+          "id": "nossa-rota",
+          "title": "Nossa Rota",
+          "description": "Planejamento financeiro da família, mês a mês. Viagens, casamento e outras metas grandes numa linha do tempo, com uma resposta: tudo isso cabe no orçamento, e até quando?",
+          "tags": ["React", "Fastify", "SQLite", "MCP"],
+          "status": "building",
+          "visibility": "private",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "pathling",
+          "title": "Pathling",
+          "description": "Quebra-cabeça de programação em formas geométricas. Você não move o triângulo: escreve um programa pequeno e assiste ele rodar.",
+          "tags": ["Defold", "Lua"],
+          "status": "usable",
+          "visibility": "private",
+          "metric": "143 níveis · Linux, web e Android",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "dotfiles",
+          "title": "dotfiles",
+          "description": "Backup e versionamento da configuração da minha máquina, com um pacote GNU Stow por ferramenta.",
+          "tags": ["GNU Stow", "Shell", "Linux"],
+          "status": "usable",
+          "visibility": "open",
+          "link": "https://github.com/gustavofsousa/dotfiles",
+          "featured": false
+        },
+        {
           "id": "accident-ml",
           "title": "Predição de Acidentes — PRF",
           "description": "Modelo de machine learning com TensorFlow usando dados da PRF (2021-2025) para prever risco de acidentes por localização, horário e condições climáticas. Do modelo ao produto público funcional.",
           "tags": ["Python", "TensorFlow", "Data Science", "ML"],
           "link": "https://github.com/gustavofsousa",
-          "featured": true
+          "featured": false
         },
         {
           "id": "healthcare-saas",
@@ -48,6 +167,17 @@
           "link": "#",
           "featured": false
         }
+      ]
+    },
+    "now": {
+      "title": "Agora",
+      "subtitle": "O que mudou nos últimos meses, sem enfeite.",
+      "items": [
+        { "date": "2026-11", "text": "PeríciaMap: v0.1–v0.4 prontas. A v0.5 (SEO e operação) é a próxima, depois a ida ao ar na v1.0." },
+        { "date": "2026-11", "text": "S-Operações: v0.1 fechada. O portão de produto da v0.2 está em andamento." },
+        { "date": "2026-11", "text": "Oratio Vitae: a fatia do tempo litúrgico (v0.3) está em andamento." },
+        { "date": "2026-10", "text": "Ecclesia Atlas v0.3.0 publicada: 266 circunscrições com território municipal." },
+        { "date": "2026-10", "text": "Pathling v0.1.0 no Defold: 143 níveis em Linux, web e Android." }
       ]
     },
     "blog": {
@@ -111,30 +241,37 @@
           {
             "label": "Diferencial em Construção",
             "items": ["RAG Systems", "Agentes Autônomos", "LLMs / Embeddings", "MCP", "Python", "LangChain", "TensorFlow", "Multi-Agent Systems", "Fine-tuning"]
+          },
+          {
+            "label": "Construindo Produtos",
+            "items": ["TypeScript", "Bun", "Astro", "Hono", "Flutter", "PostgreSQL", "PostGIS", "MapLibre", "Defold", "Railway"]
           }
         ]
       },
       "education": {
         "title": "Formação",
         "items": [
-          { "name": "42 Rio", "detail": "Software Engineering — 1900h de imersão", "period": "Concluído" },
+          { "name": "42 Rio", "detail": "Software Engineering — 1900h de imersão", "period": "Concluído", "link": "https://github.com/42-school-projects" },
           { "name": "UFF", "detail": "Engenharia de Produção", "period": "2028" }
         ]
+      },
+      "beyond": {
+        "title": "Fora do código",
+        "items": [
+          "Leitor de clássicos (Dostoiévski, Machado de Assis, Homero)",
+          "Trilheiro e entusiasta da natureza",
+          "Apaixonado por línguas e culturas",
+          "Nerd de filosofia — pergunte sobre ética em IA"
+        ]
+      },
+      "openTo": {
+        "title": "Aberto a",
+        "text": "Oportunidades para construir soluções inteligentes que resolvem problemas reais. Aberto a colaborações em produtos com IA, arquitetura de sistemas e tudo que liga tecnologia a impacto de negócio."
       }
     },
     "footer": {
       "copyright": "© 2026 Gustavo F Sousa",
       "builtWith": "Feito com propósito."
-    },
-    "admin": {
-      "loginPrompt": "Senha de administrador",
-      "login": "Entrar",
-      "logout": "Sair",
-      "save": "Salvar",
-      "cancel": "Cancelar",
-      "addProject": "Adicionar Projeto",
-      "addPost": "Adicionar Post",
-      "editHint": "Clique em qualquer item para editar"
     }
   },
   "en": {
@@ -153,6 +290,9 @@
       "title": "Projects",
       "subtitle": "Shipped products and solutions built from zero to finish.",
       "viewProject": "View project",
+      "legend": "Status:",
+      "status": {"usable": "Usable", "building": "Building", "spec": "Spec only"},
+      "visibility": {"open": "Open source", "private": "Private repository"},
       "items": [
         {
           "id": "mcp-icatu",
@@ -163,12 +303,128 @@
           "featured": true
         },
         {
+          "id": "calibre-mcp",
+          "title": "calibre-mcp",
+          "description": "MCP server that lets an LLM manage a Calibre ebook library. It writes, not only reads: a diff and a confirmation token before each risky step, a backup before each write, and recoverable deletes.",
+          "tags": ["Python", "MCP", "SQLite"],
+          "status": "usable",
+          "visibility": "open",
+          "metric": "20+ tools · MIT license",
+          "link": "https://github.com/gustavofsousa/calibre-mcp",
+          "featured": true
+        },
+        {
+          "id": "s-operacoes",
+          "title": "S-Operações",
+          "description": "IT operations for many clients in natural language. The operator asks, and the AI reads and changes the client's device fleet through guarded MCP tools.",
+          "tags": ["TypeScript", "MCP", "Action1"],
+          "status": "building",
+          "visibility": "private",
+          "link": "#",
+          "featured": true
+        },
+        {
+          "id": "periciamap",
+          "title": "PeríciaMap",
+          "description": "Platform where lawyers find court experts and experts organize their work. A full rewrite, with go-live planned for v1.0.",
+          "tags": ["Bun", "Astro", "Hono", "Drizzle", "Postgres"],
+          "status": "building",
+          "visibility": "private",
+          "metric": "v0.1–v0.4 done · staging up",
+          "link": "#",
+          "featured": true
+        },
+        {
+          "id": "hq",
+          "title": "_hq",
+          "description": "My own AI working system: skills, agents, hooks and a writing standard. It makes every repository follow the same process.",
+          "tags": ["Markdown", "Shell", "Python"],
+          "status": "usable",
+          "visibility": "private",
+          "metric": "50+ skills",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "oratio-vitae",
+          "title": "Oratio Vitae",
+          "description": "A personal devotional you build yourself. Create prayer routines and the app shows what to pray today. Local-first: no account, no server.",
+          "tags": ["Astro", "PWA", "IndexedDB"],
+          "status": "building",
+          "visibility": "private",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "ponto-caminho",
+          "title": "Ponto do Caminho",
+          "description": "Catholic spiritual reading app where reading becomes a path: text, silence, reflection, notes and practice. The public repository holds the product documentation.",
+          "tags": ["Flutter", "Dart"],
+          "status": "building",
+          "visibility": "open",
+          "link": "https://github.com/gustavofsousa/ponto-caminho",
+          "featured": false
+        },
+        {
+          "id": "terrametrica",
+          "title": "Terramétrica",
+          "description": "One click on the map gives the plot dossier: area plus environmental and risk restrictions, already cross-checked, with source and date on every number. State of Rio de Janeiro.",
+          "tags": ["Python", "FastAPI", "PostGIS", "MapLibre"],
+          "status": "building",
+          "visibility": "open",
+          "metric": "92 municipalities in the mesh",
+          "link": "https://github.com/gustavofsousa/Terrametrica",
+          "featured": false
+        },
+        {
+          "id": "ecclesia-atlas",
+          "title": "Ecclesia Atlas",
+          "description": "Open dataset of the Catholic Church's structure in Brazil, with municipal territory and a recorded source for each field.",
+          "tags": ["Python", "JSON", "GeoJSON"],
+          "status": "usable",
+          "visibility": "open",
+          "metric": "v0.3.0 · 266 circumscriptions",
+          "link": "https://github.com/gustavofsousa/ecclesia-atlas",
+          "featured": false
+        },
+        {
+          "id": "nossa-rota",
+          "title": "Nossa Rota",
+          "description": "Family financial planning, month by month. Trips, a wedding and other big goals on one timeline, with one answer: does it all fit the budget, and until when?",
+          "tags": ["React", "Fastify", "SQLite", "MCP"],
+          "status": "building",
+          "visibility": "private",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "pathling",
+          "title": "Pathling",
+          "description": "Programming puzzle in flat shapes. You do not steer the triangle: you write a tiny program and watch it run.",
+          "tags": ["Defold", "Lua"],
+          "status": "usable",
+          "visibility": "private",
+          "metric": "143 levels · Linux, web and Android",
+          "link": "#",
+          "featured": false
+        },
+        {
+          "id": "dotfiles",
+          "title": "dotfiles",
+          "description": "Backup and versioning of my machine setup, with one GNU Stow package per tool.",
+          "tags": ["GNU Stow", "Shell", "Linux"],
+          "status": "usable",
+          "visibility": "open",
+          "link": "https://github.com/gustavofsousa/dotfiles",
+          "featured": false
+        },
+        {
           "id": "accident-ml",
           "title": "Accident Prediction — PRF",
           "description": "Machine learning model with TensorFlow using PRF data (2021-2025) to predict accident risk by location, time, and weather conditions. From model to public working product.",
           "tags": ["Python", "TensorFlow", "Data Science", "ML"],
           "link": "https://github.com/gustavofsousa",
-          "featured": true
+          "featured": false
         },
         {
           "id": "healthcare-saas",
@@ -186,6 +442,17 @@
           "link": "#",
           "featured": false
         }
+      ]
+    },
+    "now": {
+      "title": "Now",
+      "subtitle": "What changed in the last months, no decoration.",
+      "items": [
+        { "date": "2026-11", "text": "PeríciaMap: v0.1–v0.4 done. v0.5 (SEO and ops) is next, then the v1.0 go-live." },
+        { "date": "2026-11", "text": "S-Operações: v0.1 closed. The v0.2 product gate is in progress." },
+        { "date": "2026-11", "text": "Oratio Vitae: the liturgical-time slice (v0.3) is in progress." },
+        { "date": "2026-10", "text": "Ecclesia Atlas v0.3.0 released: 266 circumscriptions with municipal territory." },
+        { "date": "2026-10", "text": "Pathling v0.1.0 on Defold: 143 levels on Linux, web and Android." }
       ]
     },
     "blog": {
@@ -249,30 +516,37 @@
           {
             "label": "Edge in Progress",
             "items": ["RAG Systems", "Autonomous Agents", "LLMs / Embeddings", "MCP", "Python", "LangChain", "TensorFlow", "Multi-Agent Systems", "Fine-tuning"]
+          },
+          {
+            "label": "Shipping Products",
+            "items": ["TypeScript", "Bun", "Astro", "Hono", "Flutter", "PostgreSQL", "PostGIS", "MapLibre", "Defold", "Railway"]
           }
         ]
       },
       "education": {
         "title": "Education",
         "items": [
-          { "name": "42 Rio", "detail": "Software Engineering — 1900h immersion", "period": "Completed" },
+          { "name": "42 Rio", "detail": "Software Engineering — 1900h immersion", "period": "Completed", "link": "https://github.com/42-school-projects" },
           { "name": "UFF", "detail": "Production Engineering", "period": "2028" }
         ]
+      },
+      "beyond": {
+        "title": "Beyond code",
+        "items": [
+          "Reader of classics (Dostoevsky, Machado de Assis, Homer)",
+          "Mountain hiker and nature enthusiast",
+          "Language and culture lover",
+          "Philosophy nerd — ask me about ethics in AI"
+        ]
+      },
+      "openTo": {
+        "title": "Open to",
+        "text": "Opportunities to build intelligent solutions that solve real problems. Open to collaborations on AI-powered products, system architecture, and anything that bridges tech with business impact."
       }
     },
     "footer": {
       "copyright": "© 2026 Gustavo F Sousa",
       "builtWith": "Built with purpose."
-    },
-    "admin": {
-      "loginPrompt": "Admin password",
-      "login": "Login",
-      "logout": "Logout",
-      "save": "Save",
-      "cancel": "Cancel",
-      "addProject": "Add Project",
-      "addPost": "Add Post",
-      "editHint": "Click any item to edit"
     }
   }
 }

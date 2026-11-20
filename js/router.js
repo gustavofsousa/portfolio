@@ -13,12 +13,6 @@
   function navigate() {
     var hash = window.location.hash || '';
 
-    /* Handle admin route */
-    if (hash === '#admin') {
-      showAdminLogin();
-      return;
-    }
-
     /* Hide all pages */
     document.querySelectorAll('.page').forEach(function (p) {
       p.classList.remove('page--active');

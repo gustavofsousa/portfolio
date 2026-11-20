@@ -33,16 +33,13 @@ function renderAll() {
   renderNav();
   renderHero();
   renderHomeProjects();
+  renderNow();
   renderHomeBlog();
   renderProjectsPage();
   renderBlogPage();
   renderAboutPage();
+  renderAboutClosing();
   renderFooter();
-
-  /* Re-check admin mode */
-  if (window.adminMode) {
-    document.body.classList.add('admin-mode');
-  }
 }
 
 /* --- Navigation --- */
@@ -63,17 +60,35 @@ function renderHero() {
   hero.querySelector('.hero__description').textContent = h.description;
 }
 
+/* --- Project card parts (status badge, visibility, metric) --- */
+function statusBadge(p) {
+  if (!p.status) return '';
+  return '<span class="status status--' + p.status + '">' + t('projects.status.' + p.status) + '</span>';
+}
+
+function visibilityChip(p) {
+  if (!p.visibility) return '';
+  return '<span class="visibility visibility--' + p.visibility + '">' + t('projects.visibility.' + p.visibility) + '</span>';
+}
+
+function metricLine(p) {
+  return p.metric ? '<p class="project-metric">' + p.metric + '</p>' : '';
+}
+
 /* --- Home Projects (preview) --- */
 function renderHomeProjects() {
   const container = document.getElementById('home-projects-grid');
   if (!container) return;
-  const data = getEditableProjects();
-  const viewText = t('projects.viewProject');
+  const data = t('projects.items');
 
   container.innerHTML = data.slice(0, 4).map(function (p) {
-    return '<div class="home-project-card reveal editable" data-edit-type="project" data-edit-id="' + p.id + '">' +
-      '<h3 class="home-project-card__title">' + p.title + '</h3>' +
+    return '<div class="home-project-card reveal">' +
+      '<div class="project-head">' +
+        '<h3 class="home-project-card__title">' + p.title + '</h3>' +
+        statusBadge(p) +
+      '</div>' +
       '<p class="home-project-card__description">' + p.description + '</p>' +
+      metricLine(p) +
       '<div class="home-project-card__tags">' +
         p.tags.map(function (tag) { return '<span class="tag">' + tag + '</span>'; }).join('') +
       '</div>' +
@@ -83,14 +98,36 @@ function renderHomeProjects() {
   observeReveals();
 }
 
+/* --- Now log --- */
+function renderNow() {
+  const container = document.getElementById('now-list');
+  if (!container) return;
+  const now = t('now');
+  if (!now || !now.items) return;
+
+  const title = document.getElementById('now-title');
+  const sub = document.getElementById('now-subtitle');
+  if (title) title.textContent = now.title;
+  if (sub) sub.textContent = now.subtitle;
+
+  container.innerHTML = now.items.map(function (n) {
+    return '<li class="now-item reveal">' +
+      '<time class="now-item__date" datetime="' + n.date + '">' + formatMonth(n.date) + '</time>' +
+      '<span class="now-item__text">' + n.text + '</span>' +
+    '</li>';
+  }).join('');
+
+  observeReveals();
+}
+
 /* --- Home Blog (preview) --- */
 function renderHomeBlog() {
   const container = document.getElementById('home-blog-grid');
   if (!container) return;
-  const posts = getEditablePosts();
+  const posts = t('blog.posts');
 
   container.innerHTML = posts.slice(0, 3).map(function (p) {
-    return '<article class="blog-card reveal editable" data-edit-type="post" data-edit-id="' + p.id + '">' +
+    return '<article class="blog-card reveal">' +
       '<div class="blog-card__meta">' +
         '<span class="tag--category">' + p.category + '</span>' +
         '<span class="blog-card__date">' + formatDate(p.date) + '</span>' +
@@ -108,7 +145,7 @@ function renderHomeBlog() {
 function renderProjectsPage() {
   const container = document.getElementById('projects-grid');
   if (!container) return;
-  const data = getEditableProjects();
+  const data = t('projects.items');
   const viewText = t('projects.viewProject');
 
   const projTitle = document.getElementById('projects-page-title');
@@ -116,17 +153,31 @@ function renderProjectsPage() {
   if (projTitle) projTitle.textContent = t('projects.title');
   if (projSub) projSub.textContent = t('projects.subtitle');
 
+  const legend = document.getElementById('projects-legend');
+  if (legend) {
+    const labels = t('projects.status');
+    legend.innerHTML = '<span class="legend__label">' + t('projects.legend') + '</span>' +
+      ['usable', 'building', 'spec'].map(function (s) {
+        return '<span class="status status--' + s + '">' + labels[s] + '</span>';
+      }).join('');
+  }
+
   container.innerHTML = data.map(function (p) {
-    return '<div class="project-card reveal editable" data-edit-type="project" data-edit-id="' + p.id + '">' +
-      '<div class="project-card__image"><div class="project-card__image-inner">' + p.title.split(' ')[0] + '</div></div>' +
-      '<div class="project-card__info">' +
+    const hasLink = p.link && p.link !== '#';
+    return '<div class="project-card reveal">' +
+      '<div class="project-head">' +
         '<h3 class="project-card__title">' + p.title + '</h3>' +
-        '<p class="project-card__description">' + p.description + '</p>' +
-        '<div class="project-card__tags">' +
-          p.tags.map(function (tag) { return '<span class="tag">' + tag + '</span>'; }).join('') +
-        '</div>' +
-        (p.link && p.link !== '#' ?
-          '<a href="' + p.link + '" class="btn btn--accent project-card__link" target="_blank" rel="noopener noreferrer">' +
+        statusBadge(p) +
+      '</div>' +
+      '<p class="project-card__description">' + p.description + '</p>' +
+      metricLine(p) +
+      '<div class="project-card__tags">' +
+        p.tags.map(function (tag) { return '<span class="tag">' + tag + '</span>'; }).join('') +
+      '</div>' +
+      '<div class="project-card__footer">' +
+        visibilityChip(p) +
+        (hasLink ?
+          '<a href="' + p.link + '" class="project-card__link" target="_blank" rel="noopener noreferrer">' +
             viewText +
             ' <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
           '</a>' : '') +
@@ -143,7 +194,7 @@ function renderBlogPage() {
   const grid = document.getElementById('blog-grid');
   if (!featured || !grid) return;
 
-  const posts = getEditablePosts();
+  const posts = t('blog.posts');
   const blogTitle = document.getElementById('blog-page-title');
   const blogSub = document.getElementById('blog-page-subtitle');
   if (blogTitle) blogTitle.textContent = t('blog.title');
@@ -153,7 +204,7 @@ function renderBlogPage() {
     const fp = posts[0];
     featured.innerHTML =
       '<div class="blog-featured__image"><div class="blog-featured__image-inner">' + fp.category + '</div></div>' +
-      '<div class="blog-featured__content editable" data-edit-type="post" data-edit-id="' + fp.id + '">' +
+      '<div class="blog-featured__content">' +
         '<div class="blog-featured__meta">' +
           '<span class="tag--category">' + fp.category + '</span>' +
           '<span class="blog-featured__date">' + formatDate(fp.date) + '</span>' +
@@ -164,7 +215,7 @@ function renderBlogPage() {
   }
 
   grid.innerHTML = posts.slice(1).map(function (p) {
-    return '<article class="blog-card reveal editable" data-edit-type="post" data-edit-id="' + p.id + '">' +
+    return '<article class="blog-card reveal">' +
       '<div class="blog-card__meta">' +
         '<span class="tag--category">' + p.category + '</span>' +
         '<span class="blog-card__date">' + formatDate(p.date) + '</span>' +
@@ -247,13 +298,31 @@ function renderAboutPage() {
     const eduTitle = document.getElementById('about-edu-title');
     if (eduTitle) eduTitle.textContent = about.education.title;
     eduContainer.innerHTML = about.education.items.map(function (e) {
+      const name = e.link
+        ? '<a href="' + e.link + '" target="_blank" rel="noopener noreferrer">' + e.name + '</a>'
+        : e.name;
       return '<li class="education-item">' +
-        '<span class="education-item__name">' + e.name + '</span>' +
+        '<span class="education-item__name">' + name + '</span>' +
         '<span class="education-item__detail">' + e.detail + '</span>' +
         '<span class="education-item__period">' + e.period + '</span>' +
       '</li>';
     }).join('');
   }
+}
+
+/* --- About: beyond code + open to --- */
+function renderAboutClosing() {
+  const about = t('about');
+  const list = document.getElementById('about-beyond');
+  if (!list || !about.beyond) return;
+
+  document.getElementById('about-beyond-title').textContent = about.beyond.title;
+  list.innerHTML = about.beyond.items.map(function (item) {
+    return '<li>' + item + '</li>';
+  }).join('');
+
+  document.getElementById('about-open-title').textContent = about.openTo.title;
+  document.getElementById('about-open-text').textContent = about.openTo.text;
 }
 
 /* --- Footer --- */
@@ -263,6 +332,14 @@ function renderFooter() {
 }
 
 /* --- Helpers --- */
+function formatMonth(monthStr) {
+  const parts = monthStr.split('-');
+  const names = currentLang === 'pt'
+    ? ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+    : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return names[parseInt(parts[1], 10) - 1] + ' ' + parts[0];
+}
+
 function formatDate(dateStr) {
   const d = new Date(dateStr + 'T00:00:00');
   const day = String(d.getDate()).padStart(2, '0');

@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="./css/tokens.css">
   <link rel="stylesheet" href="./css/components.css">
   <link rel="stylesheet" href="./css/layout.css">
-  <link rel="stylesheet" href="./css/admin.css">
 </head>
 <body>
 
@@ -104,6 +103,18 @@
       </div>
     </section>
 
+    <!-- Now log -->
+    <section class="section section--tight" aria-label="Agora">
+      <div class="container">
+        <span class="section__label reveal">Now</span>
+        <h2 id="now-title" class="section__title reveal">Agora</h2>
+        <p id="now-subtitle" class="section__subtitle reveal"></p>
+        <ul id="now-list" class="now-list" role="list">
+          <!-- Rendered by JS -->
+        </ul>
+      </div>
+    </section>
+
     <!-- Blog Preview -->
     <section class="section" aria-label="Últimas publicações">
       <div class="container">
@@ -130,6 +141,7 @@
       <span class="section__label">Portfolio</span>
       <h1 id="projects-page-title" class="section__title">Projetos</h1>
       <p id="projects-page-subtitle" class="section__subtitle">Uma seleção de trabalhos que refletem minha abordagem técnica.</p>
+      <div id="projects-legend" class="projects-legend"></div>
 
       <div id="projects-grid" class="projects-grid">
         <!-- Rendered by JS -->
@@ -206,6 +218,19 @@
           </ul>
         </div>
       </div>
+      <!-- Beyond code + Open to -->
+      <div class="about-sections about-sections--closing">
+        <div class="about-block">
+          <h2 id="about-beyond-title" class="about-block__title">Fora do código</h2>
+          <ul id="about-beyond" class="beyond-list" role="list">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+        <div class="about-block">
+          <h2 id="about-open-title" class="about-block__title">Aberto a</h2>
+          <p id="about-open-text" class="about-story__text"></p>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -247,64 +272,23 @@
               LinkedIn
             </a>
           </li>
+          <li>
+            <a href="https://medium.com/@gustavofsousa" target="_blank" rel="noopener noreferrer" class="footer__link" aria-label="Medium">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+              </svg>
+              Medium
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </footer>
 
   <!-- ============================================
-       ADMIN: Login Overlay
-       ============================================ -->
-  <div id="admin-login-overlay" class="admin-login-overlay" role="dialog" aria-label="Login de administrador">
-    <div class="admin-login-box">
-      <h3>🔒 Admin</h3>
-      <input type="password" id="admin-password" placeholder="Senha" autocomplete="off">
-      <p id="admin-login-error" class="admin-login-error"></p>
-      <div class="admin-login-actions">
-        <button id="admin-login-cancel" class="btn">Cancelar</button>
-        <button id="admin-login-btn" class="btn btn--accent">Entrar</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================
-       ADMIN: Edit Modal
-       ============================================ -->
-  <div id="edit-modal-overlay" class="edit-modal-overlay" role="dialog" aria-label="Editar conteúdo">
-    <div id="edit-modal" class="edit-modal">
-      <h3>Editar</h3>
-      <div id="edit-fields"></div>
-      <div class="edit-modal__actions">
-        <button id="edit-modal-delete" class="edit-modal__delete">Excluir</button>
-        <button id="edit-modal-cancel" class="btn">Cancelar</button>
-        <button id="edit-modal-save" class="btn btn--accent">Salvar</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================
-       ADMIN: Bottom Bar
-       ============================================ -->
-  <div class="admin-bar" role="toolbar" aria-label="Barra de administração">
-    <div class="admin-bar__inner">
-      <span class="admin-bar__label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-        Modo Admin
-      </span>
-      <div class="admin-bar__actions">
-        <button id="admin-add-project" class="btn">+ Projeto</button>
-        <button id="admin-add-post" class="btn">+ Post</button>
-        <button id="admin-export" class="btn">Exportar JSON</button>
-        <button id="admin-logout" class="btn btn--accent">Sair</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================
        SCRIPTS
        ============================================ -->
   <script src="./js/theme.js"></script>
-  <script src="./js/admin.js"></script>
   <script src="./js/i18n.js"></script>
   <script src="./js/router.js"></script>
 

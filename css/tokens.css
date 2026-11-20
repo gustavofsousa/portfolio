@@ -77,6 +77,9 @@
   --color-card-bg: #ffffff;
   --color-card-hover: #f9fafb;
 
+  --color-ok: #1f7a4d;
+  --color-warn: #9a5b00;
+
   --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(41, 118, 166, 0.08) 0%, transparent 70%);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -112,6 +115,9 @@
   --color-card-bg: #16162a;
   --color-card-hover: #1e1e36;
 
+  --color-ok: #5fd08e;
+  --color-warn: #e2b04a;
+
   --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(91, 163, 217, 0.06) 0%, transparent 70%);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -141,6 +147,8 @@
     --color-tag-text: #7db8e5;
     --color-card-bg: #16162a;
     --color-card-hover: #1e1e36;
+    --color-ok: #5fd08e;
+    --color-warn: #e2b04a;
     --hero-gradient: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(91, 163, 217, 0.06) 0%, transparent 70%);
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
