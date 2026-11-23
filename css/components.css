@@ -472,6 +472,12 @@
   transition: var(--t-reveal);
 }
 
+/* A 12 px label does not need the 28 px rise of a card: a small block travels less. */
+.section__label.reveal,
+.section__subtitle.reveal {
+  --reveal-distance: 14px;
+}
+
 .reveal.visible {
   opacity: 1;
   translate: 0 0;

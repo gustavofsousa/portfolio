@@ -724,6 +724,14 @@
   }
 }
 
+/* The home page has one authored entrance, the hero. The page itself only fades there, so the two
+   rises never stack on the heading. */
+#page-home.page--active {
+  @starting-style {
+    translate: 0 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page--active {
     @starting-style {
