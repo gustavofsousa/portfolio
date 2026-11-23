@@ -60,17 +60,6 @@
           "featured": true
         },
         {
-          "id": "hq",
-          "title": "_hq",
-          "description": "Meu sistema de trabalho com IA: skills, agentes, hooks e um padrão de escrita. Faz todo repositório seguir o mesmo processo.",
-          "tags": ["Markdown", "Shell", "Python"],
-          "status": "usable",
-          "visibility": "private",
-          "metric": "50+ skills",
-          "link": "#",
-          "featured": false
-        },
-        {
           "id": "oratio-vitae",
           "title": "Oratio Vitae",
           "description": "Devocionário pessoal que a própria pessoa monta. Ela cria rotinas de oração e o app mostra o que rezar hoje. Local-first: sem conta e sem servidor.",
@@ -130,32 +119,6 @@
           "status": "usable",
           "visibility": "private",
           "metric": "143 níveis · Linux, web e Android",
-          "link": "#",
-          "featured": false
-        },
-        {
-          "id": "dotfiles",
-          "title": "dotfiles",
-          "description": "Backup e versionamento da configuração da minha máquina, com um pacote GNU Stow por ferramenta.",
-          "tags": ["GNU Stow", "Shell", "Linux"],
-          "status": "usable",
-          "visibility": "open",
-          "link": "https://github.com/gustavofsousa/dotfiles",
-          "featured": false
-        },
-        {
-          "id": "accident-ml",
-          "title": "Predição de Acidentes — PRF",
-          "description": "Modelo de machine learning com TensorFlow usando dados da PRF (2021-2025) para prever risco de acidentes por localização, horário e condições climáticas. Do modelo ao produto público funcional.",
-          "tags": ["Python", "TensorFlow", "Data Science", "ML"],
-          "link": "https://github.com/gustavofsousa",
-          "featured": false
-        },
-        {
-          "id": "healthcare-saas",
-          "title": "SaaS — Gestão Geriátrica",
-          "description": "MVP de plataforma modular para gestão de clínicas e asilos, com módulos de inventário, faturamento e prontuário eletrônico. Produto end-to-end pensado para resolver o problema real de profissionais de saúde.",
-          "tags": ["SaaS", "Healthcare", "Full-stack", "MVP"],
           "link": "#",
           "featured": false
         },
@@ -335,17 +298,6 @@
           "featured": true
         },
         {
-          "id": "hq",
-          "title": "_hq",
-          "description": "My own AI working system: skills, agents, hooks and a writing standard. It makes every repository follow the same process.",
-          "tags": ["Markdown", "Shell", "Python"],
-          "status": "usable",
-          "visibility": "private",
-          "metric": "50+ skills",
-          "link": "#",
-          "featured": false
-        },
-        {
           "id": "oratio-vitae",
           "title": "Oratio Vitae",
           "description": "A personal devotional you build yourself. Create prayer routines and the app shows what to pray today. Local-first: no account, no server.",
@@ -405,32 +357,6 @@
           "status": "usable",
           "visibility": "private",
           "metric": "143 levels · Linux, web and Android",
-          "link": "#",
-          "featured": false
-        },
-        {
-          "id": "dotfiles",
-          "title": "dotfiles",
-          "description": "Backup and versioning of my machine setup, with one GNU Stow package per tool.",
-          "tags": ["GNU Stow", "Shell", "Linux"],
-          "status": "usable",
-          "visibility": "open",
-          "link": "https://github.com/gustavofsousa/dotfiles",
-          "featured": false
-        },
-        {
-          "id": "accident-ml",
-          "title": "Accident Prediction — PRF",
-          "description": "Machine learning model with TensorFlow using PRF data (2021-2025) to predict accident risk by location, time, and weather conditions. From model to public working product.",
-          "tags": ["Python", "TensorFlow", "Data Science", "ML"],
-          "link": "https://github.com/gustavofsousa",
-          "featured": false
-        },
-        {
-          "id": "healthcare-saas",
-          "title": "SaaS — Geriatric Care",
-          "description": "Modular MVP platform for clinic and nursing home management, with inventory, billing, and electronic health records modules. End-to-end product designed to solve real problems for healthcare professionals.",
-          "tags": ["SaaS", "Healthcare", "Full-stack", "MVP"],
           "link": "#",
           "featured": false
         },
