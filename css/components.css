@@ -14,7 +14,15 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--nav-border);
-  transition: background-color var(--transition-base), border-color var(--transition-base);
+  transition:
+    translate var(--spring-firm-duration) var(--spring-firm),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+/* Reading mode: the nav leaves while the reader scrolls down and returns on the way up. */
+.nav--hidden {
+  translate: 0 -100%;
 }
 
 .nav__inner {

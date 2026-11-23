@@ -123,3 +123,21 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   });
   paint();
 })();
+
+/* --- Reading mode for the nav ---
+   Scrolling down past the top hides the nav. Scrolling up, or reaching the top, brings it back. The
+   nav stays when the menu is open or a control inside it has focus. */
+(function navReadingMode() {
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  scrollFeatures.push(function (state) {
+    if (reducedMotion.matches) return nav.classList.remove('nav--hidden');
+    var menuOpen = document.querySelector('.nav__mobile-menu.open');
+    if (menuOpen || nav.matches(':focus-within') || state.y < 80 || state.dy < -4) {
+      nav.classList.remove('nav--hidden');
+    } else if (state.dy > 4 && state.y > 160) {
+      nav.classList.add('nav--hidden');
+    }
+  });
+})();
