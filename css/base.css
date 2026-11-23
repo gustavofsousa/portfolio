@@ -87,14 +87,12 @@ button {
   border-radius: 4px;
 }
 
+/* Reduced motion keeps the state and drops the trip. juice.css swaps the spring for a 120 ms ease-out,
+   and each pattern drops its own movement. A blanket 0.01 ms rule would also remove the color and
+   opacity feedback that confirms a change. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
   }
 }
 

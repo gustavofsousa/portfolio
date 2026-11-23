@@ -925,3 +925,16 @@
     padding-block: var(--space-3);
   }
 }
+
+/* Reduced motion: hover keeps its color and shadow and drops the lift and the arrow travel. */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover,
+  .project-card:hover,
+  .blog-card:hover,
+  .home-project-card:hover,
+  .btn:hover .btn__arrow,
+  .project-card__link:hover .btn__arrow,
+  .view-all:hover svg {
+    transform: none;
+  }
+}
