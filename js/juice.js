@@ -141,3 +141,23 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     }
   });
 })();
+
+/* --- Depth while reading ---
+   The hero recedes as the reader scrolls out of it, and the profile photo drifts slower than the
+   text beside it. Both follow the scroll 1:1, written on the moving element itself. */
+(function readingDepth() {
+  var hero = document.getElementById('hero-content');
+  var photo = document.querySelector('.about-photo');
+
+  scrollFeatures.push(function (state) {
+    var still = reducedMotion.matches;
+    if (hero) {
+      var gone = still ? 0 : Math.min(state.y / 520, 1);
+      hero.style.translate = '0 ' + (-gone * 90).toFixed(1) + 'px';
+      hero.style.opacity = (1 - gone * 0.65).toFixed(3);
+    }
+    if (photo) {
+      photo.style.translate = still ? '' : '0 ' + (Math.min(state.y, 900) * 0.07).toFixed(1) + 'px';
+    }
+  });
+})();
