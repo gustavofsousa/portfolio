@@ -251,6 +251,32 @@
   .lang-bump { animation: none; }
 }
 
+/* `scroll-rail` (DESIGN.md): the bar and its glow follow the scroll 1:1. JS writes clip-path and
+   translate on these two elements per frame. */
+.read-progress,
+.read-progress__tip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  pointer-events: none;
+}
+
+.read-progress {
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  clip-path: inset(0 100% 0 0);
+}
+
+.read-progress__tip {
+  width: 36px;
+  height: 18px;
+  margin: -8px 0 0 -30px;
+  background: radial-gradient(closest-side, var(--color-accent), transparent);
+  opacity: 0;
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;

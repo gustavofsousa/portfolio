@@ -56,3 +56,70 @@ import { createSpring } from './spring.js';
   window.addEventListener('resize', function () { sync(true); });
   sync(true);
 })();
+
+/* --- Scroll state shared by the reading effects ---
+   One passive scroll listener per frame. The reading effects below track the scroll 1:1: no spring
+   sits between the reader's wheel and the part (ui-juice §5, drag and scroll). */
+var scrollFeatures = [];
+var lastY = window.scrollY;
+var lastTime = performance.now();
+var scrollFrame = 0;
+
+function onScroll() {
+  if (scrollFrame) return;
+  scrollFrame = requestAnimationFrame(function () {
+    scrollFrame = 0;
+    var now = performance.now();
+    var y = window.scrollY;
+    var state = { y: y, dy: y - lastY, speed: (y - lastY) / Math.max(now - lastTime, 1) };
+    lastY = y;
+    lastTime = now;
+    scrollFeatures.forEach(function (feature) { feature(state); });
+  });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+document.addEventListener('navchange', onScroll);
+window.addEventListener('resize', onScroll);
+
+var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+/* --- Reading progress ---
+   A bar fills as the reader moves down the page. A glow rides its tip and grows with the scroll
+   speed, then fades on a firm spring when the reader stops. */
+(function readProgress() {
+  var bar = document.createElement('div');
+  bar.className = 'read-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  /* The scroll is the reader's, not a touch on this part: the glow never overshoots. */
+  bar.setAttribute('data-temperament', 'firm');
+  var tip = document.createElement('div');
+  tip.className = 'read-progress__tip';
+  tip.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  document.body.appendChild(tip);
+
+  var progress = 0;
+  var glow = createSpring({
+    value: 0,
+    el: bar,
+    onFrame: function (value) { tip.style.opacity = Math.max(value, 0).toFixed(3); }
+  });
+  var idle = 0;
+
+  function paint() {
+    bar.style.clipPath = 'inset(0 ' + ((1 - progress) * 100).toFixed(3) + '% 0 0)';
+    tip.style.translate = (progress * window.innerWidth).toFixed(2) + 'px 0';
+  }
+
+  scrollFeatures.push(function (state) {
+    var room = document.documentElement.scrollHeight - window.innerHeight;
+    progress = room > 0 ? Math.min(Math.max(state.y / room, 0), 1) : 0;
+    paint();
+    if (reducedMotion.matches) return;
+    glow.set(Math.min(Math.abs(state.speed) / 2.5, 1));
+    clearTimeout(idle);
+    idle = setTimeout(function () { glow.set(0); }, 120);
+  });
+  paint();
+})();
