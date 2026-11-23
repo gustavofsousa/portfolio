@@ -121,9 +121,6 @@
   text-decoration: none;
 }
 
-.project-card__link:hover .btn__arrow {
-  transform: translateX(4px);
-}
 
 .projects-legend {
   display: flex;
@@ -439,10 +436,6 @@
   text-underline-offset: 3px;
 }
 
-.education-item__name a:hover {
-  color: var(--color-accent);
-  text-decoration-color: var(--color-accent);
-}
 
 .education-item__detail {
   font-size: var(--text-sm);
@@ -615,9 +608,6 @@
   gap: var(--space-2);
 }
 
-.footer__link:hover {
-  color: var(--color-accent);
-}
 
 .footer__link svg {
   width: 18px;
@@ -639,9 +629,6 @@
   transition: transform var(--transition-fast);
 }
 
-.view-all:hover svg {
-  transform: translateX(4px);
-}
 
 /* --- Page Transition --- */
 .page {
@@ -771,5 +758,25 @@
 
   .hero__heading {
     font-size: var(--text-2xl);
+  }
+}
+
+/* Hover only where a pointer can hover: a tap on touch must not leave a control highlighted. */
+@media (hover: hover) and (pointer: fine) {
+  .project-card__link:hover .btn__arrow {
+    transform: translateX(4px);
+  }
+
+  .education-item__name a:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+  }
+
+  .footer__link:hover {
+    color: var(--color-accent);
+  }
+
+  .view-all:hover svg {
+    transform: translateX(4px);
   }
 }

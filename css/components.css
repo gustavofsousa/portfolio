@@ -60,7 +60,6 @@
   position: relative;
 }
 
-.nav__link:hover,
 .nav__link--active {
   color: var(--color-accent);
 }
@@ -95,10 +94,6 @@
   letter-spacing: 0.05em;
 }
 
-.nav__lang:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
 
 .nav__theme-toggle {
   width: 36px;
@@ -110,10 +105,6 @@
   color: var(--color-text-muted);
 }
 
-.nav__theme-toggle:hover {
-  color: var(--color-accent);
-  background: var(--color-accent-light);
-}
 
 /* Mobile menu toggle */
 .nav__hamburger {
@@ -202,28 +193,17 @@
   letter-spacing: 0.01em;
 }
 
-.btn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
 
 .btn--accent {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
 
-.btn--accent:hover {
-  background: var(--color-accent);
-  color: #fff;
-}
 
 .btn__arrow {
   transition: transform var(--transition-fast);
 }
 
-.btn:hover .btn__arrow {
-  transform: translateX(4px);
-}
 
 /* --- Tags --- */
 .tag {
@@ -392,5 +372,36 @@
   .reveal {
     opacity: 1;
     translate: none;
+  }
+}
+
+/* Hover only where a pointer can hover: a tap on touch must not leave a control highlighted. */
+@media (hover: hover) and (pointer: fine) {
+  .nav__link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav__lang:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .nav__theme-toggle:hover {
+    color: var(--color-accent);
+    background: var(--color-accent-light);
+  }
+
+  .btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .btn--accent:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn:hover .btn__arrow {
+    transform: translateX(4px);
   }
 }
