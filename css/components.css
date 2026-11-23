@@ -319,20 +319,29 @@
 }
 
 /* --- Scroll reveal animation --- */
+/* The system starts a reveal, so it never overshoots: it runs on the firm spring (DESIGN.md). */
+:root {
+  --reveal-distance: 28px;
+}
+
+/* INVARIANT: --t-reveal lives on the element. On :root, var(--stagger) resolves to its fallback. */
 .reveal {
+  --t-reveal:
+    translate var(--spring-firm-duration) var(--spring-firm) var(--stagger, 0ms),
+    opacity 300ms var(--ease-out) var(--stagger, 0ms);
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  translate: 0 var(--reveal-distance);
+  transition: var(--t-reveal);
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  translate: 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
-    transform: none;
+    translate: none;
   }
 }

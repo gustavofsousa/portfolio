@@ -355,11 +355,12 @@ function observeReveals() {
     return;
   }
   var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+    /* Blocks that enter in the same frame arrive one after another, 55 ms apart. */
+    var entering = entries.filter(function (entry) { return entry.isIntersecting; });
+    entering.forEach(function (entry, index) {
+      entry.target.style.setProperty('--stagger', Math.min(index, 5) * 55 + 'ms');
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     });
   }, { threshold: 0.1 });
 

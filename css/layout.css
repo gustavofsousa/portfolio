@@ -70,10 +70,9 @@
   background: var(--color-card-bg);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
-  /* INVARIANT: keep the reveal properties here; this rule overrides .reveal and froze the entrance. */
+  /* INVARIANT: keep var(--t-reveal) here; this rule overrides .reveal and froze the entrance. */
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
+    var(--t-reveal),
     border-color var(--transition-base),
     box-shadow var(--transition-base);
 }
@@ -223,7 +222,11 @@
   background: var(--color-card-bg);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-base);
+  transition:
+    var(--t-reveal),
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
   cursor: pointer;
 }
 
@@ -472,7 +475,11 @@
   background: var(--color-card-bg);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-base);
+  transition:
+    var(--t-reveal),
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
