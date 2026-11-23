@@ -13,7 +13,13 @@ async function loadContent() {
 function toggleLanguage() {
   currentLang = currentLang === 'pt' ? 'en' : 'pt';
   const btn = document.querySelector('[data-lang-toggle]');
-  if (btn) btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+  if (btn) {
+    btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+    /* One-shot answer to the touch: restart the bump even on a rapid second tap. */
+    btn.classList.remove('lang-bump');
+    void btn.offsetWidth;
+    btn.classList.add('lang-bump');
+  }
   renderAll();
   keepRevealedBlocksVisible();
 }
