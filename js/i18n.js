@@ -71,6 +71,17 @@ function renderNav() {
     const key = el.getAttribute('data-nav');
     el.textContent = t('nav.' + key);
   });
+  renderMenuLabels();
+}
+
+/* The hamburger names its state and the menu names itself, in the current language. */
+function renderMenuLabels() {
+  const button = document.querySelector('.nav__hamburger');
+  const menu = document.querySelector('.nav__mobile-menu');
+  if (!button || !menu || !contentData) return;
+  const open = button.getAttribute('aria-expanded') === 'true';
+  button.setAttribute('aria-label', t(open ? 'nav.closeMenu' : 'nav.openMenu'));
+  menu.setAttribute('aria-label', t('nav.menuLabel'));
 }
 
 /* --- Hero --- */
@@ -398,5 +409,6 @@ window.toggleLanguage = toggleLanguage;
 window.t = t;
 window.currentLang = function () { return currentLang; };
 window.renderAll = renderAll;
+window.renderMenuLabels = renderMenuLabels;
 window.loadContent = loadContent;
 window.contentData = function () { return contentData; };

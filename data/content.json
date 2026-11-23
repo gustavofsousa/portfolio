@@ -4,7 +4,10 @@
       "home": "Início",
       "projects": "Projetos",
       "blog": "Blog",
-      "about": "Sobre"
+      "about": "Sobre",
+      "openMenu": "Abrir menu",
+      "closeMenu": "Fechar menu",
+      "menuLabel": "Menu de navegação"
     },
     "hero": {
       "tagline": "Transformando ideias em",
@@ -242,7 +245,10 @@
       "home": "Home",
       "projects": "Projects",
       "blog": "Blog",
-      "about": "About"
+      "about": "About",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "menuLabel": "Navigation menu"
     },
     "hero": {
       "tagline": "Turning ideas into",

@@ -10,6 +10,8 @@
     '#about': 'page-about'
   };
 
+  var routed = false;
+
   function navigate() {
     var hash = window.location.hash || '';
 
@@ -40,6 +42,17 @@
     /* Close mobile menu if open */
     setMenuOpen(false);
 
+    /* A route change moves focus to the new page heading, so a screen reader does not stay on the nav.
+       The first load keeps the browser's own focus. */
+    if (routed && target) {
+      var heading = target.querySelector('h1');
+      if (heading) {
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+      }
+    }
+    routed = true;
+
     document.dispatchEvent(new Event('navchange'));
   }
 
@@ -61,8 +74,8 @@
     if (menu) menu.classList.toggle('open', open);
     if (button) {
       button.setAttribute('aria-expanded', open ? 'true' : 'false');
-      button.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     }
+    if (window.renderMenuLabels) window.renderMenuLabels();
     /* The open menu is modal: the page behind it leaves the focus order and the reading order. */
     document.querySelectorAll('main, footer').forEach(function (el) { el.inert = open; });
     if (open) {

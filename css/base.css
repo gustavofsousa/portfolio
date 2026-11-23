@@ -90,6 +90,11 @@ button {
 /* Reduced motion keeps the state and drops the trip. juice.css swaps the spring for a 120 ms ease-out,
    and each pattern drops its own movement. A blanket 0.01 ms rule would also remove the color and
    opacity feedback that confirms a change. */
+/* A heading that receives focus after a route change needs no ring: the page already changed. */
+h1[tabindex='-1']:focus {
+  outline: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
