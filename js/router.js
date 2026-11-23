@@ -39,6 +39,8 @@
 
     /* Close mobile menu if open */
     setMenuOpen(false);
+
+    document.dispatchEvent(new Event('navchange'));
   }
 
   window.addEventListener('hashchange', navigate);

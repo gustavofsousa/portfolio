@@ -45,6 +45,7 @@
 }
 
 .nav__links {
+  position: relative;
   display: flex;
   align-items: center;
   gap: var(--space-8);
@@ -64,7 +65,8 @@
   color: var(--color-accent);
 }
 
-.nav__link--active::after {
+/* Without JS the active link keeps its static underline. */
+.nav__links:not(.js-indicator) .nav__link--active::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -73,6 +75,15 @@
   height: 2px;
   background: var(--color-accent);
   border-radius: 1px;
+}
+
+.nav__indicator {
+  position: absolute;
+  inset: auto 0 -4px 0;
+  height: 2px;
+  background: var(--color-accent);
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0 round 1px);
 }
 
 .nav__controls {

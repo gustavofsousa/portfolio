@@ -22,6 +22,7 @@ function toggleLanguage() {
   }
   renderAll();
   keepRevealedBlocksVisible();
+  document.dispatchEvent(new Event('langchange'));
 }
 
 /* A language swap rebuilds the DOM. Blocks that were on screen or above it stay in place, with no
