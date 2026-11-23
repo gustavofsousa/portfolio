@@ -30,6 +30,18 @@
   --spring-bounce: 0;
 }
 
+/* PROJECT: juice.css ships firm as the :root default only. A firm island inside an elastic page (the nav) needs its own block. */
+[data-temperament="firm"] {
+  --spring: var(--spring-firm);
+  --spring-duration: var(--spring-firm-duration);
+  --press-scale: 0.97;
+  --squash: 0.04;
+  --stretch: 0.08;
+  --lean: 2px;
+  --spring-response: 220;
+  --spring-bounce: 0;
+}
+
 [data-temperament="balanced"] {
   --spring: var(--spring-balanced);
   --spring-duration: var(--spring-balanced-duration);

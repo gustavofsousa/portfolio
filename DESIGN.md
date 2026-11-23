@@ -23,7 +23,7 @@ theme toggle, language toggle) may bounce.
 Named patterns (use only these):
 
 - `lift` — hover on a card: `transform: translateY(-3px)`, one shadow level up, ease-out. Pointer devices only.
-- `press` — active on a control: `.juice-press` (sinks evenly) or `.juice-press-shape` (icon without text).
+- `press` — active on a control: `scale` sinks to the temperament press scale (0.95 elastic, 0.97 in the firm nav), releases on the spring. The rule lives in `css/components.css`.
 - `reveal` — a block enters on scroll: opacity 0→1 and `translate` 28px→0, firm spring, 55ms stagger per sibling that enters in the same frame.
 - `page-enter` — a route enters: fade and a 16px rise on the firm spring.
 - `grow` — the mobile menu opens from the hamburger (`.juice-grow`).

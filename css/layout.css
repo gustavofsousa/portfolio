@@ -610,7 +610,6 @@
   font-weight: 500;
   color: var(--color-text-muted);
   text-decoration: none;
-  transition: color var(--transition-fast);
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -634,11 +633,14 @@
   font-weight: 600;
   color: var(--color-accent);
   text-decoration: none;
-  transition: gap var(--transition-fast);
 }
 
-.view-all:hover {
-  gap: var(--space-3);
+.view-all svg {
+  transition: transform var(--transition-fast);
+}
+
+.view-all:hover svg {
+  transform: translateX(4px);
 }
 
 /* --- Page Transition --- */
