@@ -891,3 +891,29 @@
     transform: translateX(4px);
   }
 }
+
+/* Touch targets: at least 44 px (craft floor §1). The small controls grow on touch and narrow screens only. */
+@media (pointer: coarse), (max-width: 900px) {
+  .nav__hamburger {
+    width: 44px;
+    height: 44px;
+    padding: 12px 10px;
+  }
+
+  .nav__lang {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav__theme-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footer__link,
+  .view-all,
+  .project-card__link,
+  .nav__mobile-menu .nav__link {
+    padding-block: var(--space-3);
+  }
+}
