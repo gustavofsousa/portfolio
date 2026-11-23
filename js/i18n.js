@@ -15,6 +15,19 @@ function toggleLanguage() {
   const btn = document.querySelector('[data-lang-toggle]');
   if (btn) btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
   renderAll();
+  keepRevealedBlocksVisible();
+}
+
+/* A language swap rebuilds the DOM. Blocks that were on screen or above it stay in place, with no
+   second entrance. Blocks below the fold still reveal when the reader scrolls to them. */
+function keepRevealedBlocksVisible() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) {
+    if (el.getBoundingClientRect().top >= window.innerHeight) return;
+    el.style.transition = 'none';
+    el.classList.add('visible');
+    void el.offsetWidth;
+    el.style.transition = '';
+  });
 }
 
 function t(path) {
