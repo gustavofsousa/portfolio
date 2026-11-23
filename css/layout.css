@@ -51,6 +51,33 @@
   line-height: 1.7;
 }
 
+/* `hero-enter`: the heading, then the description, rise in on the firm spring each time the home page
+   shows. Only the two persistent nodes animate: a language swap rebuilds their children and must
+   not replay the entrance. */
+.hero__heading,
+.hero__description {
+  transition:
+    translate var(--spring-firm-duration) var(--spring-firm),
+    opacity 300ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    translate: 0 28px;
+  }
+}
+
+.hero__description {
+  transition-delay: 140ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__heading,
+  .hero__description {
+    @starting-style {
+      translate: 0 0;
+    }
+  }
+}
+
 /* --- Projects Page --- */
 .projects-page {
   padding-top: calc(var(--space-32) + var(--space-8));
