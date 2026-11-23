@@ -196,6 +196,37 @@
   transition-duration: var(--spring-firm-duration), 300ms, var(--duration-press), var(--duration-press);
 }
 
+/* Theme switch (DESIGN.md `pop`): the view transition owns the crossfade, so the surfaces must not
+   run their own color transitions while it captures. */
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+
+/* One-shot: the new icon turns in on the spring. rotate and scale are individual properties. */
+@keyframes icon-turn {
+  from { rotate: -120deg; scale: 0.5; }
+  to { rotate: 0deg; scale: 1; }
+}
+
+.icon-turn {
+  animation: icon-turn var(--spring-duration) var(--spring);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-turn { animation: none; }
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;

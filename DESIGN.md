@@ -27,7 +27,7 @@ Named patterns (use only these):
 - `reveal` — a block enters on scroll: opacity 0→1 and `translate` 28px→0, firm spring, 55ms stagger per sibling that enters in the same frame.
 - `page-enter` — a route enters: fade and a 16px rise on the firm spring.
 - `grow` — the mobile menu opens from the hamburger (`.juice-grow`).
-- `pop` — the theme icon and the language button answer a press once.
+- `pop` — the theme switch is one view transition: the new theme grows as a circle from the toggle and the icon turns in on the elastic spring. The language button answers a press once.
 - `scroll-rail` — reading progress bar and the Now rail follow the scroll 1:1, no spring between the finger and the part.
 
 Rules that hold everywhere: move only `opacity`, `translate`, `scale`, `rotate` and `transform`;
