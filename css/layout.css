@@ -70,7 +70,12 @@
   background: var(--color-card-bg);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
-  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  /* INVARIANT: keep the reveal properties here; this rule overrides .reveal and froze the entrance. */
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .project-card:hover {
