@@ -126,7 +126,27 @@
   height: 2px;
   background: var(--color-text);
   border-radius: 2px;
-  transition: all var(--transition-fast);
+  transition:
+    translate var(--spring-duration) var(--spring),
+    rotate var(--spring-duration) var(--spring),
+    scale var(--spring-duration) var(--spring),
+    opacity 120ms var(--ease-out);
+}
+
+/* Open: the bars cross into an X. The middle bar leaves. The centers sit 7 px apart (2 px bar + 5 px gap). */
+.nav__hamburger[aria-expanded='true'] span:nth-child(1) {
+  translate: 0 7px;
+  rotate: 45deg;
+}
+
+.nav__hamburger[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+  scale: 0 1;
+}
+
+.nav__hamburger[aria-expanded='true'] span:nth-child(3) {
+  translate: 0 -7px;
+  rotate: -45deg;
 }
 
 .nav__mobile-menu {

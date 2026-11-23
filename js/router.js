@@ -38,8 +38,7 @@
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     /* Close mobile menu if open */
-    var mobileMenu = document.querySelector('.nav__mobile-menu');
-    if (mobileMenu) mobileMenu.classList.remove('open');
+    setMenuOpen(false);
   }
 
   window.addEventListener('hashchange', navigate);
@@ -52,19 +51,21 @@
     });
   });
 
-  /* Mobile menu */
+  /* Mobile menu: the hamburger toggles it and shows its state as an X. */
+  function setMenuOpen(open) {
+    var menu = document.querySelector('.nav__mobile-menu');
+    var button = document.querySelector('.nav__hamburger');
+    if (menu) menu.classList.toggle('open', open);
+    if (button) button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
   document.addEventListener('click', function (e) {
     if (e.target.closest('.nav__hamburger')) {
       var menu = document.querySelector('.nav__mobile-menu');
-      if (menu) menu.classList.add('open');
-    }
-    if (e.target.closest('.nav__mobile-close')) {
-      var menu = document.querySelector('.nav__mobile-menu');
-      if (menu) menu.classList.remove('open');
+      setMenuOpen(!(menu && menu.classList.contains('open')));
     }
     if (e.target.classList.contains('nav__link') && e.target.closest('.nav__mobile-menu')) {
-      var menu = document.querySelector('.nav__mobile-menu');
-      if (menu) menu.classList.remove('open');
+      setMenuOpen(false);
     }
   });
 })();

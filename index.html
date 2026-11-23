@@ -47,7 +47,7 @@
       <div class="nav__controls">
         <button class="nav__lang" data-lang-toggle onclick="toggleLanguage()" aria-label="Mudar idioma">EN</button>
         <button class="nav__theme-toggle" data-theme-toggle aria-label="Alternar tema"></button>
-        <button class="nav__hamburger" aria-label="Abrir menu">
+        <button class="nav__hamburger" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -56,11 +56,6 @@
 
   <!-- Mobile Menu -->
   <div class="nav__mobile-menu" data-temperament="firm" role="dialog" aria-label="Menu de navegação">
-    <button class="nav__mobile-close" aria-label="Fechar menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
     <a href="#home" class="nav__link" data-nav="home">Início</a>
     <a href="#projects" class="nav__link" data-nav="projects">Projetos</a>
     <a href="#blog" class="nav__link" data-nav="blog">Blog</a>

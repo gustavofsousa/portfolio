@@ -731,21 +731,6 @@
     .nav__mobile-menu .nav__link { translate: 0 0; }
   }
 
-  .nav__mobile-close {
-    position: absolute;
-    top: var(--space-4);
-    right: var(--space-6);
-    font-size: var(--text-xl);
-    color: var(--color-text);
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   .hero {
     min-height: 70vh;
