@@ -24,7 +24,7 @@ Named patterns (use only these):
 
 - `lift` — hover on a card: `transform: translateY(-3px)`, one shadow level up, ease-out. Pointer devices only.
 - `press` — active on a control: `.juice-press` (sinks evenly) or `.juice-press-shape` (icon without text).
-- `reveal` — a block enters on scroll: opacity 0→1, `translate` 28px→0 and `scale` 0.97→1, firm spring, 55ms stagger per sibling.
+- `reveal` — a block enters on scroll: opacity 0→1 and `translate` 28px→0, firm spring, 55ms stagger per sibling that enters in the same frame.
 - `page-enter` — a route enters: fade and a 16px rise on the firm spring.
 - `grow` — the mobile menu opens from the hamburger (`.juice-grow`).
 - `pop` — the theme icon and the language button answer a press once.

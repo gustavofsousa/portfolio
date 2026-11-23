@@ -73,14 +73,11 @@
   /* INVARIANT: keep var(--t-reveal) here; this rule overrides .reveal and froze the entrance. */
   transition:
     var(--t-reveal),
+    transform var(--transition-base),
     border-color var(--transition-base),
     box-shadow var(--transition-base);
 }
 
-.project-card:hover {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-md);
-}
 
 .project-card__title {
   font-family: var(--font-display);
@@ -230,11 +227,6 @@
   cursor: pointer;
 }
 
-.blog-card:hover {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
 
 .blog-card__meta {
   display: flex;
@@ -485,11 +477,6 @@
   gap: var(--space-3);
 }
 
-.home-project-card:hover {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
 
 .home-project-card__title {
   font-family: var(--font-display);

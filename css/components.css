@@ -276,10 +276,16 @@
   transition: all var(--transition-base);
 }
 
-.card:hover {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+/* `lift` (DESIGN.md): one rule for every card. A tap on touch must not leave a card lifted. */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover,
+  .project-card:hover,
+  .blog-card:hover,
+  .home-project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
 }
 
 /* --- Section utilities --- */
