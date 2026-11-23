@@ -80,6 +80,7 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll, { passive: true });
 document.addEventListener('navchange', onScroll);
+document.addEventListener('langchange', onScroll);
 window.addEventListener('resize', onScroll);
 
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -159,5 +160,27 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (photo) {
       photo.style.translate = still ? '' : '0 ' + (Math.min(state.y, 900) * 0.07).toFixed(1) + 'px';
     }
+  });
+})();
+
+/* --- Now rail ---
+   A line fills as the reader moves down the Now list. Each dot lands (squashes once) the first time
+   it passes the reading line at 60% of the viewport. Scrolling back up un-reads it quietly. */
+(function nowRail() {
+  var wrap = document.querySelector('.now-wrap');
+  var fill = document.querySelector('.now-rail__fill');
+  var list = document.getElementById('now-list');
+  if (!wrap || !fill || !list) return;
+
+  scrollFeatures.push(function () {
+    var box = wrap.getBoundingClientRect();
+    if (!box.height || !wrap.offsetParent) return;
+    var line = window.innerHeight * 0.6;
+    var done = Math.min(Math.max((line - box.top) / box.height, 0), 1);
+    fill.style.scale = '1 ' + done.toFixed(4);
+    list.querySelectorAll('.now-item').forEach(function (item) {
+      var passed = item.getBoundingClientRect().top < line;
+      item.classList.toggle('is-read', passed);
+    });
   });
 })();
