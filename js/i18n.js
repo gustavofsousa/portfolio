@@ -15,10 +15,13 @@ function toggleLanguage() {
   const btn = document.querySelector('[data-lang-toggle]');
   if (btn) {
     btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
-    /* One-shot answer to the touch: restart the bump even on a rapid second tap. */
-    btn.classList.remove('lang-bump');
-    void btn.offsetWidth;
-    btn.classList.add('lang-bump');
+    /* One answer to the touch, by transition: the button rises to 1.08 and its spring brings it back.
+       A second tap mid-bump retargets from the current scale, so nothing restarts. */
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      btn.style.scale = '1.08';
+      clearTimeout(btn._bumpTimer);
+      btn._bumpTimer = setTimeout(function () { btn.style.scale = ''; }, 90);
+    }
   }
   renderAll();
   keepRevealedBlocksVisible();

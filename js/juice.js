@@ -173,15 +173,23 @@ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var list = document.getElementById('now-list');
   if (!wrap || !fill || !list) return;
 
+  var landed = [];
+
   scrollFeatures.push(function () {
     var box = wrap.getBoundingClientRect();
     if (!box.height || !wrap.offsetParent) return;
     var line = window.innerHeight * 0.6;
     var done = Math.min(Math.max((line - box.top) / box.height, 0), 1);
     fill.style.scale = '1 ' + done.toFixed(4);
-    list.querySelectorAll('.now-item').forEach(function (item) {
+    list.querySelectorAll('.now-item').forEach(function (item, index) {
       var passed = item.getBoundingClientRect().top < line;
       item.classList.toggle('is-read', passed);
+      /* The landing plays the first time a dot is read, by position, so a language swap that rebuilds
+         the list does not replay it either. */
+      if (passed && !landed[index]) {
+        landed[index] = true;
+        item.classList.add('land');
+      }
     });
   });
 })();

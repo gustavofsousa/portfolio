@@ -232,18 +232,6 @@
 ::view-transition-old(root) { z-index: 1; }
 ::view-transition-new(root) { z-index: 2; }
 
-/* One-shot bump for a control with text. It scales evenly: text never squashes (ui-juice §1). */
-@keyframes lang-bump {
-  0% { scale: 1; }
-  35% { scale: 0.92; }
-  70% { scale: 1.08; }
-  100% { scale: 1; }
-}
-
-.lang-bump {
-  animation: lang-bump var(--spring-duration) var(--ease-out);
-}
-
 /* One-shot: the new icon turns in on the spring. rotate and scale are individual properties. */
 @keyframes icon-turn {
   from { rotate: -120deg; scale: 0.5; }
@@ -255,8 +243,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .icon-turn,
-  .lang-bump { animation: none; }
+  .icon-turn { animation: none; }
 }
 
 /* `scroll-rail` (DESIGN.md): the bar and its glow follow the scroll 1:1. JS writes clip-path and

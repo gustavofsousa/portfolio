@@ -622,6 +622,10 @@
 .now-item.is-read::before {
   border-color: var(--color-accent);
   background: var(--color-accent);
+}
+
+/* `land` is added once per dot and never removed, so scrolling back and forth does not replay it. */
+.now-item.land::before {
   animation: juice-land var(--spring-duration) var(--ease-out);
 }
 

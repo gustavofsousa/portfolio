@@ -27,7 +27,7 @@ Named patterns (use only these):
 - `reveal` — a block enters on scroll: opacity 0→1 and `translate` 28px→0, firm spring, 55ms stagger per sibling that enters in the same frame.
 - `page-enter` — a route enters: fade and a 16px rise on the firm spring.
 - `grow` — the mobile menu opens from the hamburger (`.juice-grow`).
-- `pop` — the theme switch is one view transition: the new theme grows as a circle from the toggle and the icon turns in on the elastic spring. The language button bumps once per tap, evenly (text never squashes).
+- `pop` — the theme switch is one view transition: the new theme grows as a circle from the toggle and the icon turns in on the elastic spring. The language button bumps once per tap by transition (it rises to 1.08 and the spring returns it), so a second tap continues from where it is.
 - `scroll-rail` — the reading progress bar (with a speed glow on the firm spring) and the Now rail follow the scroll 1:1, no spring between the wheel and the part. Each Now dot lands once.
 - `reading-mode` — the nav slides out on scroll down and back on scroll up, firm spring. It stays with the menu open or focus inside.
 - `depth` — the hero recedes (up to 90px, opacity down to 0.35) and the about photo drifts 7% slower than the page. 1:1 with the scroll.
