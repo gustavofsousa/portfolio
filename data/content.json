@@ -10,22 +10,22 @@
       "menuLabel": "Menu de navegação"
     },
     "hero": {
-      "tagline": "Transformando ideias em",
-      "highlight": "produtos que funcionam",
-      "description": "Me chamo Gustavo F Sousa. Sou AI-Native Product Engineer — pego problemas reais e construo soluções completas, do back-end ao deploy, com IA aplicada como alavanca."
+      "tagline": "construindo produtos",
+      "highlight": "do zero.",
+      "description": "Sou o Gustavo F Sousa. Alguns dos meus produtos deram certo, outros não. Hoje toco alguns projetos ao mesmo tempo e construo em público."
     },
     "projects": {
       "title": "Projetos",
-      "subtitle": "Produtos lançados e soluções construídas do zero ao fim.",
+      "subtitle": "Uns no ar, outros em construção. Todos começaram do zero.",
       "viewProject": "Ver projeto",
       "legend": "Status:",
       "status": {"usable": "Funcionando", "building": "Em construção", "spec": "Só especificação"},
       "visibility": {"open": "Código aberto", "private": "Repositório privado"},
       "items": [
         {
-          "id": "mcp-icatu",
-          "title": "MCP — Icatu Seguros",
-          "description": "Implementação do Model Context Protocol em ambiente corporativo, integrando IA generativa com segurança em sistemas de seguros de grande porte. Integração padronizada de IA com sistemas legados em arquitetura enterprise.",
+          "id": "mcp-sql-server",
+          "title": "MCP — SQL Server",
+          "description": "Implementação do Model Context Protocol para conectar IA generativa a um banco SQL Server corporativo, com acesso controlado. Integração padronizada de IA com sistemas legados em arquitetura enterprise.",
           "tags": [".NET 8", "C#", "Microservices", "SQL Server", "MCP", "Azure"],
           "link": "#",
           "featured": true
@@ -107,7 +107,7 @@
         {
           "id": "nossa-rota",
           "title": "Nossa Rota",
-          "description": "Planejamento financeiro da família, mês a mês. Viagens, casamento e outras metas grandes numa linha do tempo, com uma resposta: tudo isso cabe no orçamento, e até quando?",
+          "description": "Planejamento financeiro da família, mês a mês. Viagens, casamento e outras metas grandes numa linha do tempo, e a conta de quando cada uma cabe no orçamento.",
           "tags": ["React", "Fastify", "SQLite", "MCP"],
           "status": "building",
           "visibility": "private",
@@ -128,7 +128,7 @@
         {
           "id": "sousa-tech",
           "title": "Sousa Tech & Systems",
-          "description": "Consultoria de TI para pequenas empresas — suporte remoto, configuração de sistemas, web design e instrução de informática com contratos estruturados e SLA definido.",
+          "description": "Consultoria de TI para pequenas empresas: suporte remoto, configuração de sistemas, web design e instrução de informática.",
           "tags": ["IT Support", "Consulting", "Web Design"],
           "link": "#",
           "featured": false
@@ -148,7 +148,7 @@
     },
     "blog": {
       "title": "Blog",
-      "subtitle": "Reflexões sobre tecnologia, carreira e desenvolvimento.",
+      "subtitle": "Produto rápido, distribuição, IA, experimentos e o que eu aprendo no caminho.",
       "readMore": "Ler mais",
       "posts": [
         {
@@ -164,36 +164,37 @@
     "about": {
       "title": "Sobre mim",
       "story": {
-        "title": "Builder com Visão de Impacto",
+        "title": "Construindo em público",
         "paragraphs": [
-          "Não sou apenas programador, nem apenas engenheiro, nem apenas analista de processos. Sou quem pega um problema real e constrói a <strong>solução completa que funciona</strong>. Meu diferencial está na intersecção rara: entendo código, processo, arquitetura e impacto humano.",
-          "Tudo começou com curiosidade por entender como as coisas funcionam — de smartphones a servidores. Essa curiosidade me levou à <strong>42 Rio</strong>, onde mergulhei em 1900 horas de engenharia de software pura: C, C++, algoritmos e sistemas Unix, tudo em um ambiente de peer-learning sem professores.",
-          "Em paralelo, curso <strong>Engenharia de Produção na UFF</strong> (previsão 2028). Enquanto o desenvolvedor comum foca no <em>como</em> construir, a Engenharia de Produção me ensina o <em>porquê</em> construir e como otimizar processos para gerar resultado. Olho para um problema e pergunto: qual é o gargalo? Estamos otimizando a parte certa? Como meço o sucesso de forma estatisticamente válida?",
-          "Hoje atuo na <strong>Icatu Seguros</strong> implementando o Model Context Protocol (MCP), integrando IA generativa com segurança em ambientes corporativos. Fundei a <strong>Sousa Tech & Systems</strong> para atender pequenas empresas com suporte de TI, web design e consultoria.",
-          "Meu foco: <strong>IA Aplicada</strong> (RAG, Agentes Autônomos, LLMs, MCP), <strong>backend escalável</strong> (.NET, microserviços, Azure) e a construção de <strong>produtos end-to-end</strong> que resolvem problemas reais de negócio. O mercado está cheio de devs que só codificam e de cientistas que só fazem modelos — está vazio de quem faz a ponte. <strong>Esse é meu espaço.</strong>"
+          "Eu construo produtos do zero.",
+          "Alguns deram certo.<br>Outros não.<br>Todos me ensinaram alguma coisa.",
+          "A base veio da <strong>42 Rio</strong> (1900 horas de C, C++ e Unix, sem professores) e da <strong>Engenharia de Produção na UFF</strong> (formatura em 2028). No dia a dia, trabalho com IA generativa integrada a sistemas corporativos, usando MCP.",
+          "Agora estou tocando alguns projetos,<br>entre eles o <strong>PeríciaMap</strong>, o <strong>S-Operações</strong> e o <strong>Terramétrica</strong>.",
+          "Quase tudo o que eu escrevo aqui é sobre:<br>→ construir produto rápido<br>→ distribuição e crescimento<br>→ IA<br>→ experimentos que podem dar certo ou não<br>→ tudo o que eu aprendo no caminho",
+          "No fundo, é construir em público<br>e ver aonde isso vai."
         ]
       },
       "valueProposition": {
-        "title": "Proposta de Valor",
-        "text": "Engenheiro de Software Full-Stack especializado em soluções com IA aplicada. Construo produtos end-to-end que resolvem problemas reais de negócio, com foco em automação inteligente, processamento de dados e experiências potencializadas por agentes autônomos."
+        "title": "O que eu faço",
+        "text": "Construo produtos do começo ao fim: back-end, front-end, deploy e IA, quando ela ajuda. Lanço versões pequenas cedo e aprendo com elas."
       },
       "principles": {
         "title": "O que me move",
         "items": [
           {
             "icon": "impact",
-            "name": "Impacto Tangível",
-            "description": "Preciso ver meu trabalho melhorando a vida de alguém. Produtos que não importam não me movem."
+            "name": "Tem que importar",
+            "description": "Quero que o que eu construo ajude alguém de verdade."
           },
           {
             "icon": "autonomy",
-            "name": "Autonomia Técnica Completa",
-            "description": "Capacidade de construir do zero ao fim, sem depender de ninguém para executar minha visão."
+            "name": "Do zero ao ar",
+            "description": "Levo uma ideia do rascunho até a produção."
           },
           {
             "icon": "purpose",
-            "name": "Pragmatismo com Propósito",
-            "description": "Quero ganhar resolvendo coisas que importam. Se não atende isso, não é para mim."
+            "name": "Lança, depois aprende",
+            "description": "Uma coisa pequena no ar vale mais que um plano perfeito num documento."
           }
         ]
       },
@@ -231,8 +232,8 @@
         ]
       },
       "openTo": {
-        "title": "Aberto a",
-        "text": "Oportunidades para construir soluções inteligentes que resolvem problemas reais. Aberto a colaborações em produtos com IA, arquitetura de sistemas e tudo que liga tecnologia a impacto de negócio."
+        "title": "Dá um oi",
+        "text": "Se você também está construindo, dá um oi 👋 Topo trocar ideia sobre experimentos, produtos e o que deu certo ou errado."
       }
     },
     "footer": {
@@ -251,22 +252,22 @@
       "menuLabel": "Navigation menu"
     },
     "hero": {
-      "tagline": "Turning ideas into",
-      "highlight": "products that work",
-      "description": "I'm Gustavo F Sousa. AI-Native Product Engineer — I take real problems and build complete solutions, from back-end to deploy, with applied AI as leverage."
+      "tagline": "building products",
+      "highlight": "from zero.",
+      "description": "I'm Gustavo F Sousa. Some of my products worked, some failed. Right now I'm working on a few at once, and building in public."
     },
     "projects": {
       "title": "Projects",
-      "subtitle": "Shipped products and solutions built from zero to finish.",
+      "subtitle": "Some live, some still building. All of them started from zero.",
       "viewProject": "View project",
       "legend": "Status:",
       "status": {"usable": "Usable", "building": "Building", "spec": "Spec only"},
       "visibility": {"open": "Open source", "private": "Private repository"},
       "items": [
         {
-          "id": "mcp-icatu",
-          "title": "MCP — Icatu Seguros",
-          "description": "Implementation of the Model Context Protocol in a corporate environment, securely integrating generative AI into large-scale insurance systems. Standardized AI integration with legacy systems in enterprise architecture.",
+          "id": "mcp-sql-server",
+          "title": "MCP — SQL Server",
+          "description": "Implementation of the Model Context Protocol to connect generative AI to a corporate SQL Server database, with controlled access. Standardized AI integration with legacy systems in enterprise architecture.",
           "tags": [".NET 8", "C#", "Microservices", "SQL Server", "MCP", "Azure"],
           "link": "#",
           "featured": true
@@ -348,7 +349,7 @@
         {
           "id": "nossa-rota",
           "title": "Nossa Rota",
-          "description": "Family financial planning, month by month. Trips, a wedding and other big goals on one timeline, with one answer: does it all fit the budget, and until when?",
+          "description": "Family financial planning, month by month. Trips, a wedding and other big goals on one timeline, and the math of when each one fits the budget.",
           "tags": ["React", "Fastify", "SQLite", "MCP"],
           "status": "building",
           "visibility": "private",
@@ -369,7 +370,7 @@
         {
           "id": "sousa-tech",
           "title": "Sousa Tech & Systems",
-          "description": "IT consulting for small businesses — remote support, system configuration, web design and informatics instruction with structured contracts and defined SLA.",
+          "description": "IT consulting for small businesses: remote support, system configuration, web design and informatics instruction.",
           "tags": ["IT Support", "Consulting", "Web Design"],
           "link": "#",
           "featured": false
@@ -389,7 +390,7 @@
     },
     "blog": {
       "title": "Blog",
-      "subtitle": "Thoughts on technology, career, and development.",
+      "subtitle": "Shipping fast, distribution, AI, experiments, and what I learn along the way.",
       "readMore": "Read more",
       "posts": [
         {
@@ -405,36 +406,37 @@
     "about": {
       "title": "About me",
       "story": {
-        "title": "Builder with Impact Vision",
+        "title": "Building in public",
         "paragraphs": [
-          "I'm not just a programmer, nor just an engineer, nor just a process analyst. I'm the one who takes a real problem and builds the <strong>complete solution that works</strong>. My edge lies at a rare intersection: I understand code, process, architecture, and human impact.",
-          "It all started with curiosity about how things work — from smartphones to servers. That curiosity led me to <strong>42 Rio</strong>, where I immersed myself in 1900 hours of pure software engineering: C, C++, algorithms, and Unix systems, all in a peer-learning environment with no teachers.",
-          "In parallel, I'm studying <strong>Production Engineering at UFF</strong> (expected 2028). While the average developer focuses on <em>how</em> to build, Production Engineering teaches me <em>why</em> to build and how to optimize processes for results. I look at a problem and ask: what's the bottleneck? Are we optimizing the right part? How do I measure success in a statistically valid way?",
-          "Today I work at <strong>Icatu Seguros</strong> implementing the Model Context Protocol (MCP), securely integrating generative AI into corporate environments. I founded <strong>Sousa Tech & Systems</strong> to serve small businesses with IT support, web design, and consulting.",
-          "My focus: <strong>Applied AI</strong> (RAG, Autonomous Agents, LLMs, MCP), <strong>scalable backend</strong> (.NET, microservices, Azure), and building <strong>end-to-end products</strong> that solve real business problems. The market is full of devs who only code and data scientists who only build models — it's empty of those who bridge the gap. <strong>That's my space.</strong>"
+          "I build products from zero.",
+          "Some worked.<br>Some failed.<br>All of them taught me something.",
+          "The base came from <strong>42 Rio</strong> (1900 hours of C, C++ and Unix, no teachers) and <strong>Production Engineering at UFF</strong> (graduating in 2028). By day I work with generative AI integrated into enterprise systems, using MCP.",
+          "Right now I'm working on a few projects,<br>including <strong>PeríciaMap</strong>, <strong>S-Operações</strong> and <strong>Terramétrica</strong>.",
+          "Most of what I write about here is:<br>→ building products fast<br>→ distribution & growth<br>→ AI<br>→ experiments that may or may not work<br>→ everything I learn along the way",
+          "Basically building in public<br>and seeing where it goes."
         ]
       },
       "valueProposition": {
-        "title": "Value Proposition",
-        "text": "Full-Stack Software Engineer specialized in applied AI solutions. I build end-to-end products that solve real business problems, focusing on intelligent automation, data processing, and experiences powered by autonomous agents."
+        "title": "What I do",
+        "text": "I build products from start to finish: back-end, front-end, deploy, and AI when it helps. I ship small versions early and learn from them."
       },
       "principles": {
         "title": "What drives me",
         "items": [
           {
             "icon": "impact",
-            "name": "Tangible Impact",
-            "description": "I need to see my work improving someone's life. Products that don't matter don't move me."
+            "name": "It has to matter",
+            "description": "I want what I build to really help someone."
           },
           {
             "icon": "autonomy",
-            "name": "Complete Technical Autonomy",
-            "description": "The ability to build from zero to finish, without depending on anyone to execute my vision."
+            "name": "Zero to shipped",
+            "description": "I take an idea from draft to production."
           },
           {
             "icon": "purpose",
-            "name": "Pragmatism with Purpose",
-            "description": "I want to earn by solving things that matter. If it doesn't meet this, it's not for me."
+            "name": "Ship, then learn",
+            "description": "A small thing live beats a perfect plan in a doc."
           }
         ]
       },
@@ -472,8 +474,8 @@
         ]
       },
       "openTo": {
-        "title": "Open to",
-        "text": "Opportunities to build intelligent solutions that solve real problems. Open to collaborations on AI-powered products, system architecture, and anything that bridges tech with business impact."
+        "title": "Say hi",
+        "text": "Say hi if you're building too 👋 Happy to swap notes on experiments, products, and what worked or didn't."
       }
     },
     "footer": {

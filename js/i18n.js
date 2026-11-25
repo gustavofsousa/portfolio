@@ -53,6 +53,7 @@ function t(path) {
 
 function renderAll() {
   if (!contentData) return;
+  renderStaticLabels();
   renderNav();
   renderHero();
   renderHomeProjects();
@@ -63,6 +64,13 @@ function renderAll() {
   renderAboutPage();
   renderAboutClosing();
   renderFooter();
+}
+
+/* --- Static labels: any element with data-i18n="path" takes its text from content.json --- */
+function renderStaticLabels() {
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    el.textContent = t(el.getAttribute('data-i18n'));
+  });
 }
 
 /* --- Navigation --- */
